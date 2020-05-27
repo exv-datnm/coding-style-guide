@@ -1,0 +1,1129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0082)Swift.htm#declaring-variables -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swift Coding Standards</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="./CodingStandards_files/normalize.css" type="text/css">
+  <link rel="stylesheet" href="./CodingStandards_files/css" type="text/css">
+  <link rel="stylesheet" href="./CodingStandards_files/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="./CodingStandards_files/syntax_highlighting.css" type="text/css">
+  <meta name="theme-color" content="#393454">
+</head>
+<body><audio class="audio-for-speech" src=""></audio><div class="translate-tooltip-mtz hidden">                    <div class="header">                        <div class="header-controls">                            <span class="sound-translate"></span>                            <span class="settings"></span>                        </div>                        <div class="translate-icons">                                                 </div>                    </div>                    <div class="translated-text">                        <div class="words"></div>                        <div class="sentences"></div>                    </div>                </div><span class="translate-button-mtz hidden"></span>
+
+<section class="main-content">
+    <h1>
+<a id="swift-coding-standards" class="anchor" href="Swift.htm#swift-coding-standards" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Swift Coding Standards</h1>
+<h2>
+<a id="using-swift" class="anchor" href="Swift.htm#using-swift" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Swift</h2>
+<ul>
+<li>These standards apply to Swift 5.0 and later.</li>
+<li>When using Swift in a project, use Swift 5.0 or higher.</li>
+<li>Favor readability and clarity above fewer keystrokes.</li>
+</ul>
+<h2>
+<a id="when-in-doubt" class="anchor" href="Swift.htm#when-in-doubt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>When In Doubt</h2>
+<p>If questions aren't addressed here refer to the style guides of <a href="https://github.com/raywenderlich/swift-style-guide">raywenderlich.com</a> and <a href="https://docs.swift.org/swift-book/" rel="nofollow">Apple</a> and <a href="https://swift.org/documentation/api-design-guidelines/" rel="nofollow">Swift API Design Guidelines</a>. If there are inconsistencies, our own standards take precedence. We're at the mercy of a cruel and capricious language unless you, the iOS Engineer, open a pull request.</p>
+<hr>
+<ul>
+<li><a href="Swift.htm#musts">Musts</a>
+<ul>
+<li><a href="Swift.htm#native-swift-types">Native Swift Types</a></li>
+<li><a href="Swift.htm#class-prefixes">Class Prefixes</a></li>
+<li><a href="Swift.htm#optionals">Optionals</a></li>
+<li><a href="Swift.htm#error-handling">Error Handling</a></li>
+<li><a href="Swift.htm#let-vs-var">Let vs. Var</a></li>
+<li><a href="Swift.htm#access-control">Access Control</a></li>
+<li><a href="Swift.htm#spacing">Spacing</a></li>
+<li><a href="Swift.htm#closures">Closures</a></li>
+<li><a href="Swift.htm#protocols">Protocols</a></li>
+<li><a href="Swift.htm#arrays-and-dictionaries">Arrays and Dictionaries</a></li>
+<li><a href="Swift.htm#constants">Constants</a></li>
+<li><a href="Swift.htm#function-parameters">Function Parameters</a></li>
+<li><a href="Swift.htm#semicolons">Semicolons</a></li>
+<li><a href="Swift.htm#typealiases">Typealiases</a></li>
+<li><a href="Swift.htm#flow-control">Flow Control</a></li>
+<li><a href="Swift.htm#switch-statements">Switch Statements</a></li>
+<li><a href="Swift.htm#use-implicit-getters">Use Implicit Getters</a></li>
+<li><a href="Swift.htm#loops">Loops</a></li>
+</ul>
+</li>
+<li><a href="Swift.htm#shoulds">Shoulds</a>
+<ul>
+<li><a href="Swift.htm#declaring-variables">Declaring Variables</a></li>
+<li><a href="Swift.htm#optionals-1">Optionals</a></li>
+<li><a href="Swift.htm#spacing-1">Spacing</a></li>
+<li><a href="Swift.htm#usage-of-self">Usage of self</a></li>
+<li><a href="Swift.htm#loops-1">Loops</a></li>
+<li><a href="Swift.htm#closures-1">Closures</a></li>
+<li><a href="Swift.htm#operator-overloading--custom-operators">Operator Overloading + Custom Operators</a></li>
+<li><a href="Swift.htm#tuples">Tuples</a></li>
+<li><a href="Swift.htm#constants-1">Constants</a></li>
+<li><a href="Swift.htm#default-initializers">Default Initializers</a></li>
+<li><a href="Swift.htm#classes-vs-structs">Classes vs Structs</a></li>
+</ul>
+</li>
+<li><a href="Swift.htm#tips--tricks">Tips &amp; Tricks</a>
+<ul>
+<li><a href="Swift.htm#simplify-xcodes-autocompletion-suggestions">Simplify Xcode's Autocompletion Suggestions</a></li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="musts" class="anchor" href="Swift.htm#musts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Musts</h2>
+<h3>
+<a id="native-swift-types" class="anchor" href="Swift.htm#native-swift-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Native Swift Types</h3>
+<ul>
+<li>
+<p><strong>Use Swift types whenever possible</strong> (<code>Array</code>, <code>Dictionary</code>, <code>Set</code>, <code>String</code>, etc.) as opposed to the <code>NS*</code> types from Objective-C.  Many Objective-C types can be automatically converted to Swift types and vice versa.  See <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/WorkingWithCocoaDataTypes.html#//apple_ref/doc/uid/TP40014216-CH6-ID61" rel="nofollow">Working With Cocoa Data Types</a> for more details.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> pageLabelText <span class="pl-k">=</span> <span class="pl-c1">NSString</span>(<span class="pl-c1">format</span>: <span class="pl-s"><span class="pl-pds">"</span>%@/%@<span class="pl-pds">"</span></span>, currentPage, pageCount)</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> pageLabelText <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">\(</span><span class="pl-s1">currentPage</span><span class="pl-pse"><span class="pl-s1">)</span></span>/<span class="pl-pse">\(</span><span class="pl-s1">pageCount</span><span class="pl-pse"><span class="pl-s1">)</span></span><span class="pl-pds">"</span></span>
+<span class="pl-k">let</span> alsoPageLabelText <span class="pl-k">=</span> currentPage <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> <span class="pl-k">+</span> pageCount</pre></div>
+</li>
+</ul>
+<h4>
+<a id="swift-collection-types" class="anchor" href="Swift.htm#swift-collection-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Swift Collection Types</h4>
+<ul>
+<li>
+<p>Do not make <code>NSArray</code>, <code>NSDictionary</code>, and <code>NSSet</code> properties or variables.  If you need to use a specific method only found on a Foundation collection, cast your Swift type in order to use that method.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> arrayOfJSONObjects<span class="pl-k">:</span> NSArray <span class="pl-k">=</span> <span class="pl-c1">NSArray</span>()
+<span class="pl-k">...</span>
+<span class="pl-k">let</span> names<span class="pl-k">:</span> <span class="pl-c1">AnyObject</span><span class="pl-k">?</span> <span class="pl-k">=</span> arrayOfJSONObjects.<span class="pl-c1">value</span>(<span class="pl-c1">forKeyPath</span>: <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>)</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> arrayOfJSONObjects <span class="pl-k">=</span> [[<span class="pl-c1">String</span><span class="pl-k">:</span> <span class="pl-c1">AnyObject</span>]]()
+<span class="pl-k">...</span>
+<span class="pl-k">let</span> names<span class="pl-k">:</span> <span class="pl-c1">AnyObject</span><span class="pl-k">?</span> <span class="pl-k">=</span> (arrayOfJSONObjects <span class="pl-k">as</span> NSArray).<span class="pl-c1">value</span>(<span class="pl-c1">forKeyPath</span>: <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>)</pre></div>
+</li>
+<li>
+<p>Consider if there is a Swiftier way to do what you're trying to do:</p>
+<p><strong>Swiftier Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> arrayOfJSONObjects <span class="pl-k">=</span> [[<span class="pl-c1">String</span><span class="pl-k">:</span> <span class="pl-c1">AnyObject</span>]]()
+<span class="pl-k">...</span>
+<span class="pl-k">let</span> names<span class="pl-k">:</span> [<span class="pl-c1">String</span>] <span class="pl-k">=</span> arrayOfJSONObjects.<span class="pl-smi">compactMap</span> { object <span class="pl-k">in</span>
+    <span class="pl-k">return</span> object[<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span>
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="class-prefixes" class="anchor" href="Swift.htm#class-prefixes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Class Prefixes</h3>
+<ul>
+<li>
+<p>Do not add a class prefix.  Swift types are automatically namespaced by the module that contains them.  If two names from different modules collide you can disambiguate by prefixing the type name with the module name.</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span> SomeModule.swift</span>
+<span class="pl-c"></span><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">UsefulClass</span> {
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-k">func</span> <span class="pl-en">helloWorld</span>() {
+        <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>helloWorld from SomeModule<span class="pl-pds">"</span></span>)
+    }
+}
+
+<span class="pl-c"><span class="pl-c">//</span> MyApp.Swift</span>
+<span class="pl-c"></span><span class="pl-k">class</span> <span class="pl-en">UsefulClass</span> {
+    <span class="pl-k">class</span> <span class="pl-k">func</span> <span class="pl-en">helloWorld</span>() {
+        <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>helloWorld from MyApp<span class="pl-pds">"</span></span>)
+    }   
+}
+
+<span class="pl-k">import</span> <span class="pl-en">SomeModule</span>
+
+<span class="pl-k">let</span> appClass <span class="pl-k">=</span> UsefulClass.<span class="pl-c1">helloWorld</span>()
+<span class="pl-k">let</span> moduleClass <span class="pl-k">=</span> SomeModule.<span class="pl-smi">UsefulClass</span>.<span class="pl-c1">helloWorld</span>()</pre></div>
+<p>Source: <a href="https://github.com/raywenderlich/swift-style-guide/blob/master/README.markdown#class-prefixes">RW - Swift Style Guide</a></p>
+</li>
+</ul>
+<h3>
+<a id="optionals" class="anchor" href="Swift.htm#optionals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optionals</h3>
+<h4>
+<a id="force-unwrapping" class="anchor" href="Swift.htm#force-unwrapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Force Unwrapping</h4>
+<ul>
+<li>
+<p><strong>Avoid force unwrapping optionals</strong> by using <code>!</code> or <code>as!</code> as this will cause your app to crash if the value you are trying to use is <code>nil</code>. Safely unwrap the optional first by using things like <code>guard let</code>, <code>if let</code>, <code>guard let as?</code>, <code>if let as?</code>, and optional chaining. A rare reason to force-unwrap would be if you have a value you expect to never be <code>nil</code> and you want your app to crash if the value actually is <code>nil</code> due to some implementation mistake. An example of this would be an <code>@IBOutlet</code> that accidentally gets disconnected. However, consider this an edge-case and rethink whether your own code could be refactored to not use force-unwrapping.</p>
+<p><strong>Incorrect unwrap</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span> URL init(string:) is a failable initializer and will crash at runtime with a force unwrap if initialization fails!</span>
+<span class="pl-c"></span><span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: <span class="pl-s"><span class="pl-pds">"</span>http://www.example.com/<span class="pl-pds">"</span></span>)<span class="pl-k">!</span>
+
+UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)</pre></div>
+<p><strong>Correct unwrap</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: <span class="pl-s"><span class="pl-pds">"</span>http://www.example.com/<span class="pl-pds">"</span></span>) <span class="pl-k">else</span> {
+    <span class="pl-k">return</span>
+}
+
+UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)</pre></div>
+<p><strong>Incorrect downcast</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span> segue.destination is declared to be of type UIViewController, so forcing a downcast to type</span>
+<span class="pl-c"><span class="pl-c">//</span> DetailViewController here will crash if the type is not DetailViewController at runtime!</span>
+<span class="pl-c"></span><span class="pl-k">let</span> detailViewController <span class="pl-k">=</span> segue.<span class="pl-smi">destination</span> <span class="pl-k">as!</span> DetailViewController
+detailViewController.<span class="pl-smi">person</span> <span class="pl-k">=</span> person</pre></div>
+<p><strong>Correct downcast</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span> <span class="pl-k">let</span> detailViewController <span class="pl-k">=</span> segue.<span class="pl-smi">destination</span> <span class="pl-k">as?</span> DetailViewController <span class="pl-k">else</span> {
+    <span class="pl-k">return</span>
+}
+
+detailViewController.<span class="pl-smi">person</span> <span class="pl-k">=</span> person</pre></div>
+<p><strong>Incorrect optional chaining</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span> delegate is an optional so force unwrapping here will crash if delegate is actually nil at runtime!</span>
+<span class="pl-c"></span>delegate<span class="pl-k">!</span>.<span class="pl-c1">didSelectItem</span>(item)</pre></div>
+<p><strong>Correct optional chaining</strong></p>
+<div class="highlight highlight-source-swift"><pre>delegate<span class="pl-k">?</span>.<span class="pl-c1">didSelectItem</span>(item)</pre></div>
+</li>
+</ul>
+<h4>
+<a id="if-let-pyramid-of-doom" class="anchor" href="Swift.htm#if-let-pyramid-of-doom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>if let</code> Pyramid of Doom</h4>
+<ul>
+<li>
+<p>Use multiple optional binding in an <code>if let</code> statement where possible to avoid the <a href="https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming)" rel="nofollow">pyramid of doom</a>:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">if</span> <span class="pl-k">let</span> id <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">id</span>] <span class="pl-k">as?</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">if</span> <span class="pl-k">let</span> firstName <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">firstName</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span> {
+        <span class="pl-k">if</span> <span class="pl-k">let</span> lastName <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">lastName</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span> {
+            <span class="pl-k">if</span> <span class="pl-k">let</span> initials <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">initials</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span> {
+                <span class="pl-c"><span class="pl-c">//</span> Deep nesting</span>
+<span class="pl-c"></span>                <span class="pl-k">let</span> user <span class="pl-k">=</span> <span class="pl-c1">User</span>(<span class="pl-c1">id</span>: id, <span class="pl-c1">firstName</span>: name, <span class="pl-c1">lastName</span>: lastName, <span class="pl-c1">initials</span>: initials)
+                <span class="pl-c"><span class="pl-c">//</span> ...</span>
+<span class="pl-c"></span>            }
+        }
+    }
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">if</span>
+    <span class="pl-k">let</span> id <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">Id</span>] <span class="pl-k">as?</span> <span class="pl-c1">Int</span>,
+    <span class="pl-k">let</span> firstName <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">firstName</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span>,
+    <span class="pl-k">let</span> lastName <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">lastName</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span>,
+    <span class="pl-k">let</span> initials <span class="pl-k">=</span> jsonObject[Constants.<span class="pl-smi">initials</span>] <span class="pl-k">as?</span> <span class="pl-c1">String</span> {
+        <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>        <span class="pl-k">let</span> user <span class="pl-k">=</span> <span class="pl-c1">User</span>(<span class="pl-c1">id</span>: id, <span class="pl-c1">name</span>: name, <span class="pl-c1">initials</span>: initials)
+        <span class="pl-c"><span class="pl-c">//</span> ...</span>
+<span class="pl-c"></span>}</pre></div>
+</li>
+<li>
+<p>If there are multiple unwrapped variables created, put each on its own line for readability (as in the example above).</p>
+</li>
+</ul>
+<h4>
+<a id="unwrapping-multiple-optionals" class="anchor" href="Swift.htm#unwrapping-multiple-optionals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unwrapping Multiple Optionals</h4>
+<ul>
+<li>
+<p>When using <code>guard</code>, <code>if</code>, or <code>while</code> to unwrap multiple optionals, put each constant and/or variable onto its own line, followed by a <code>,</code> except for the last line, which should be followed by <code>else {</code> for <code>guard</code> (though this may be on its own line), or <code>{</code> for <code>if</code> and <code>while</code>.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree
+    <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+}
+
+<span class="pl-k">if</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree
+    {
+        <span class="pl-c"><span class="pl-c">//</span> Code</span>
+<span class="pl-c"></span>}
+
+<span class="pl-k">guard</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne, constantTwo <span class="pl-k">=</span> valueTwo, constantThree <span class="pl-k">=</span> valueThree <span class="pl-k">else</span> {
+    <span class="pl-k">return</span>
+}
+
+<span class="pl-k">if</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne, <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo, <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree {
+    <span class="pl-c"><span class="pl-c">//</span> Code</span>
+<span class="pl-c"></span>}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+}
+
+<span class="pl-k">if</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree {
+        <span class="pl-c"><span class="pl-c">//</span> Code</span>
+<span class="pl-c"></span>}</pre></div>
+</li>
+<li>
+<p>Put a line-break after <code>guard</code>, <code>if</code>, or <code>while</code> and list each constant or variable its own line.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span> <span class="pl-k">let</span>
+    constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">var</span> variableOne <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueThree <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+}
+
+<span class="pl-k">if</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">var</span> variableOne <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">var</span> variableTwo <span class="pl-k">=</span> valueThree,
+    <span class="pl-k">var</span> variableThree <span class="pl-k">=</span> valueFour,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueFive {
+        <span class="pl-c"><span class="pl-c">//</span> Code</span>
+<span class="pl-c"></span>}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree,
+    <span class="pl-k">var</span> variableOne <span class="pl-k">=</span> valueFour,
+    <span class="pl-k">var</span> variableTwo <span class="pl-k">=</span> valueFive,
+    <span class="pl-k">var</span> variableThree <span class="pl-k">=</span> valueSix <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+}
+
+<span class="pl-k">if</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree,
+    <span class="pl-k">var</span> variableOne <span class="pl-k">=</span> valueFour,
+    <span class="pl-k">var</span> variableTwo <span class="pl-k">=</span> valueFive,
+    <span class="pl-k">var</span> variableThree <span class="pl-k">=</span> valueSix {
+        <span class="pl-c"><span class="pl-c">//</span> Code</span>
+<span class="pl-c"></span>}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="error-handling" class="anchor" href="Swift.htm#error-handling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Error Handling</h3>
+<h4>
+<a id="forced-try-expression" class="anchor" href="Swift.htm#forced-try-expression" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Forced-try Expression</h4>
+<ul>
+<li>
+<p><strong>Avoid using the forced-try expression</strong> <code>try!</code> as a way to ignore errors from throwing methods as this will crash your app if the error actually gets thrown. Safely handle errors using a <code>do</code> statement along with <code>try</code> and <code>catch</code>. A rare reason to use the forced-try expression is similar to force unwrapping optionals; you actually want the app to crash (ideally during debugging before the app ships) to indicate an implementation error. An example of this would be loading a bundle resource that should always be there unless you forgot to include it or rename it.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span> This will crash at runtime if there is an error parsing the JSON data!</span>
+<span class="pl-c"></span><span class="pl-k">let</span> json <span class="pl-k">=</span> <span class="pl-k">try</span><span class="pl-k">!</span> JSONSerialization.<span class="pl-c1">jsonObject</span>(<span class="pl-c1">with</span>: data, <span class="pl-c1">options</span>: .<span class="pl-smi">allowFragments</span>)
+<span class="pl-c1">print</span>(json)</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">do</span> {
+    <span class="pl-k">let</span> json <span class="pl-k">=</span> <span class="pl-k">try</span> JSONSerialization.<span class="pl-c1">jsonObject</span>(<span class="pl-c1">with</span>: data, <span class="pl-c1">options</span>: .<span class="pl-smi">allowFragments</span>)
+    <span class="pl-c1">print</span>(json)
+} <span class="pl-k">catch</span> {
+    <span class="pl-c1">print</span>(error)
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="let-vs-var" class="anchor" href="Swift.htm#let-vs-var" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Let vs. Var</h3>
+<ul>
+<li>Whenever possible use <code>let</code> instead of <code>var</code>.</li>
+<li>Declare properties of an object or struct that shouldn't change over its lifetime with <code>let</code>.</li>
+<li>If the value of the property isn't known until creation, it can still be declared <code>let</code>: <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID212" rel="nofollow">assigning constant properties during initialization</a>.</li>
+</ul>
+<h3>
+<a id="access-control" class="anchor" href="Swift.htm#access-control" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Access Control</h3>
+<ul>
+<li>
+<p>Prefer <code>private</code> properties and methods whenever possible to encapsulate and limit access to internal object state.</p>
+</li>
+<li>
+<p>For private declarations at the top level of a file that are outside of a type, explicitly specify the declaration as <code>fileprivate</code>. This is functionally the same as marking these declarations <code>private</code>, but clarifies the scope:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">import</span> <span class="pl-en">Foundation</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Top level declaration</span>
+<span class="pl-c"></span><span class="pl-k">private</span> <span class="pl-k">let</span> foo <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>
+
+<span class="pl-k">struct</span> <span class="pl-en">Baz</span> {
+<span class="pl-k">...</span></pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">import</span> <span class="pl-en">Foundation</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Top level declaration</span>
+<span class="pl-c"></span><span class="pl-k">fileprivate</span> <span class="pl-k">let</span> foo <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>
+
+<span class="pl-k">struct</span> <span class="pl-en">Baz</span> {
+<span class="pl-k">...</span></pre></div>
+</li>
+<li>
+<p>If you need to expose functionality to other modules, prefer <code>public</code> classes and class members whenever possible to ensure functionality is not accidentally overridden. Better to expose the class to <code>open</code> for subclassing when needed.</p>
+</li>
+</ul>
+<h3>
+<a id="spacing" class="anchor" href="Swift.htm#spacing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Spacing</h3>
+<ul>
+<li>
+<p>Open curly braces on the same line as the statement and close on a new line.</p>
+</li>
+<li>
+<p>Don't add empty lines after opening braces or before closing braces.</p>
+</li>
+<li>
+<p>Put <code>else</code> statements on the same line as the closing brace of the previous <code>if</code> block.</p>
+</li>
+<li>
+<p>Make all colons left-hugging (no space before but a space after) except when used with the ternary operator (a space both before and after).</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">class</span> <span class="pl-en">SomeClass</span> : <span class="pl-e">SomeSuperClass</span>
+{
+
+    <span class="pl-k">private</span> <span class="pl-k">let</span> someString<span class="pl-k">:</span><span class="pl-c1">String</span>
+
+    <span class="pl-k">func</span> <span class="pl-en">someFunction</span>(<span class="pl-smi"><span class="pl-en">someParam</span></span> :<span class="pl-c1">Int</span>)
+    {
+        
+        <span class="pl-k">let</span> dictionaryLiteral <span class="pl-k">:</span> [<span class="pl-c1">String</span> <span class="pl-k">:</span> <span class="pl-c1">AnyObject</span>] <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>]
+
+        <span class="pl-k">let</span> ternary <span class="pl-k">=</span> (someParam <span class="pl-k">&gt;</span> <span class="pl-c1">10</span>) <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>
+
+        <span class="pl-k">if</span> someParam <span class="pl-k">&gt;</span> <span class="pl-c1">10</span> { <span class="pl-k">...</span> }
+
+        <span class="pl-k">else</span> {
+            <span class="pl-k">...</span>
+        } } }</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">class</span> <span class="pl-en">SomeClass</span>: <span class="pl-e">SomeSuperClass </span>{
+    <span class="pl-k">private</span> <span class="pl-k">let</span> someString<span class="pl-k">:</span> <span class="pl-c1">String</span>
+
+    <span class="pl-k">func</span> <span class="pl-en">someFunction</span>(<span class="pl-smi"><span class="pl-en">someParam</span></span>: <span class="pl-c1">Int</span>) {
+        <span class="pl-k">let</span> dictionaryLiteral<span class="pl-k">:</span> [<span class="pl-c1">String</span><span class="pl-k">:</span> <span class="pl-c1">AnyObject</span>] <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>]
+
+        <span class="pl-k">let</span> ternary <span class="pl-k">=</span> (someParam <span class="pl-k">&gt;</span> <span class="pl-c1">10</span>) <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>
+
+        <span class="pl-k">if</span> someParam <span class="pl-k">&gt;</span> <span class="pl-c1">10</span> {
+            <span class="pl-k">...</span>
+        } <span class="pl-k">else</span> {
+            <span class="pl-k">...</span>
+        }
+    }
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="closures" class="anchor" href="Swift.htm#closures" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Closures</h3>
+<h4>
+<a id="shorthand-argument-syntax" class="anchor" href="Swift.htm#shorthand-argument-syntax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shorthand Argument Syntax</h4>
+<ul>
+<li>
+<p>Only use shorthand argument syntax for simple one-line closure implementations:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> doubled <span class="pl-k">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>].<span class="pl-c1">map</span> { <span class="pl-c1">$0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> } <span class="pl-c"><span class="pl-c">//</span> [4, 6, 8]</span></pre></div>
+</li>
+<li>
+<p>For all other cases, explicitly define the argument(s):</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> names <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>George Washington<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Martha Washington<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Abe Lincoln<span class="pl-pds">"</span></span>]
+<span class="pl-k">let</span> emails<span class="pl-k">:</span> [<span class="pl-c1">String</span>] <span class="pl-k">=</span> names.<span class="pl-c1">map</span> { fullname <span class="pl-k">in</span>
+    <span class="pl-k">let</span> dottedName <span class="pl-k">=</span> fullname.<span class="pl-c1">replacingOccurrences</span>(<span class="pl-c1">of</span>: <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>, <span class="pl-c1">with</span>: <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span>)
+    <span class="pl-k">return</span> dottedName.<span class="pl-c1">lowercased</span>() <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>@whitehouse.gov<span class="pl-pds">"</span></span>
+}</pre></div>
+</li>
+</ul>
+<h4>
+<a id="capture-lists" class="anchor" href="Swift.htm#capture-lists" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Capture lists</h4>
+<ul>
+<li>
+<p>Use capture lists to <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID57" rel="nofollow">resolve strong reference cycles in closures</a>:</p>
+<div class="highlight highlight-source-swift"><pre>UserAPI.<span class="pl-c1">registerUser</span>(user) { [<span class="pl-k">weak</span> <span class="pl-c1">self</span>] result <span class="pl-k">in</span>
+    <span class="pl-k">if</span> result.<span class="pl-smi">success</span> {
+        <span class="pl-c1">self</span><span class="pl-k">?</span>.<span class="pl-c1">doSomethingWithResult</span>(result)
+    }
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="protocols" class="anchor" href="Swift.htm#protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Protocols</h3>
+<h4>
+<a id="protocol-conformance" class="anchor" href="Swift.htm#protocol-conformance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Protocol Conformance</h4>
+<ul>
+<li>
+<p>When adding protocol conformance to a type, use a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a type with its associated methods.</p>
+</li>
+<li>
+<p>Use a <code>// MARK: - SomeDelegate</code> comment to keep things well organized.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">class</span> <span class="pl-en">MyViewcontroller</span>: <span class="pl-e">UIViewController</span>, <span class="pl-e">UITableViewDataSource</span>, <span class="pl-e">UIScrollViewDelegate </span>{
+  <span class="pl-c"><span class="pl-c">//</span> All methods</span>
+<span class="pl-c"></span>}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">class</span> <span class="pl-en">MyViewcontroller</span>: <span class="pl-e">UIViewController </span>{
+  <span class="pl-k">...</span>
+}
+
+<span class="pl-c"><span class="pl-c">//</span> MARK: - UITableViewDataSource</span>
+<span class="pl-c"></span>
+<span class="pl-k">extension</span> <span class="pl-en">MyViewcontroller</span>: <span class="pl-e">UITableViewDataSource </span>{
+  <span class="pl-c"><span class="pl-c">//</span> Table view data source methods</span>
+<span class="pl-c"></span>}
+
+<span class="pl-c"><span class="pl-c">//</span> MARK: - UIScrollViewDelegate</span>
+<span class="pl-c"></span>
+<span class="pl-k">extension</span> <span class="pl-en">MyViewcontroller</span>: <span class="pl-e">UIScrollViewDelegate </span>{
+  <span class="pl-c"><span class="pl-c">//</span> Scroll view delegate methods</span>
+<span class="pl-c"></span>}</pre></div>
+</li>
+</ul>
+<h4>
+<a id="delegate-protocols" class="anchor" href="Swift.htm#delegate-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delegate Protocols</h4>
+<ul>
+<li>
+<p>Limit delegate protocols to classes only by adding <code>class</code> to the protocol's inheritance list (as discussed in <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID281" rel="nofollow">Class-Only Protocols</a>).</p>
+</li>
+<li>
+<p>If your protocol should have <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID284" rel="nofollow">optional methods</a>, it must be declared with the <code>@objc</code> attribute.</p>
+</li>
+<li>
+<p>Declare protocol definitions near the class that uses the delegate, not the class that implements the delegate methods.</p>
+</li>
+<li>
+<p>If more than one class uses the same protocol, declare it in its own file.</p>
+</li>
+<li>
+<p>Use <code>weak</code> optional <code>var</code>s for delegate variables to avoid retain cycles.</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span>SomeTableCell.swift</span>
+<span class="pl-c"></span>
+<span class="pl-k">protocol</span> <span class="pl-en">SomeTableCellDelegate</span>: <span class="pl-k">class</span> {
+    <span class="pl-k">func</span> <span class="pl-en">cellButtonWasTapped</span>(<span class="pl-smi"><span class="pl-en">cell</span></span>: SomeTableCell)
+}
+
+<span class="pl-k">class</span> <span class="pl-en">SomeTableCell</span>: <span class="pl-e">UITableViewCell </span>{
+    <span class="pl-k">weak</span> <span class="pl-k">var</span> delegate<span class="pl-k">:</span> SomeTableCellDelegate<span class="pl-k">?</span>
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+<span class="pl-c"></span>}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span>SomeTableViewController.swift</span>
+<span class="pl-c"></span>
+<span class="pl-k">class</span> <span class="pl-en">SomeTableViewController</span>: <span class="pl-e">UITableViewController </span>{
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+<span class="pl-c"></span>}
+
+<span class="pl-c"><span class="pl-c">//</span> MARK: - SomeTableCellDelegate</span>
+<span class="pl-c"></span>
+<span class="pl-k">extension</span> <span class="pl-en">SomeTableViewController</span>: <span class="pl-e">SomeTableCellDelegate </span>{
+    <span class="pl-k">func</span> <span class="pl-en">cellButtonWasTapped</span>(<span class="pl-smi"><span class="pl-en">cell</span></span>: SomeTableCell) {
+        <span class="pl-c"><span class="pl-c">//</span> Implementation of cellbuttonwasTapped method</span>
+<span class="pl-c"></span>    }
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="arrays-and-dictionaries" class="anchor" href="Swift.htm#arrays-and-dictionaries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arrays and Dictionaries</h3>
+<h4>
+<a id="type-shorthand-syntax" class="anchor" href="Swift.htm#type-shorthand-syntax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Type Shorthand Syntax</h4>
+<ul>
+<li>
+<p>Use square bracket shorthand type syntax for Array and Dictionary as recommended by Apple in <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID107" rel="nofollow">Array Type Shorthand Syntax</a>:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> users<span class="pl-k">:</span> <span class="pl-c1">Array</span><span class="pl-k">&lt;</span><span class="pl-c1">String</span><span class="pl-k">&gt;</span>
+<span class="pl-k">let</span> usersByName<span class="pl-k">:</span> <span class="pl-c1">Dictionary</span><span class="pl-k">&lt;</span><span class="pl-c1">String</span>, User<span class="pl-k">&gt;</span></pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> users<span class="pl-k">:</span> [<span class="pl-c1">String</span>]
+<span class="pl-k">let</span> usersByName<span class="pl-k">:</span> [<span class="pl-c1">String</span><span class="pl-k">:</span> User]</pre></div>
+</li>
+</ul>
+<h4>
+<a id="trailing-comma" class="anchor" href="Swift.htm#trailing-comma" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trailing Comma</h4>
+<ul>
+<li>
+<p>For array and dictionary literals, unless the literal is very short, split it into multiple lines, with the opening symbols on their own line, each item or key-value pair on its own line, and the closing symbol on its own line. Put a trailing comma after the last item or key-value pair to facilitate future insertion/editing. Xcode will handle alignment sanely.</p>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> anArray <span class="pl-k">=</span> [
+    object1,
+    object2,
+    object3,
+]
+
+<span class="pl-k">let</span> aDictionary <span class="pl-k">=</span> [
+    <span class="pl-s"><span class="pl-pds">"</span>key1<span class="pl-pds">"</span></span><span class="pl-k">:</span> value1,
+    <span class="pl-s"><span class="pl-pds">"</span>key2<span class="pl-pds">"</span></span><span class="pl-k">:</span> value2,
+]</pre></div>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> anArray <span class="pl-k">=</span> [
+    object1,
+    object2,
+    object3 <span class="pl-c"><span class="pl-c">//</span>no trailing comma</span>
+<span class="pl-c"></span>]
+
+<span class="pl-k">let</span> aDictionary <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>key1<span class="pl-pds">"</span></span><span class="pl-k">:</span> value1, <span class="pl-s"><span class="pl-pds">"</span>key2<span class="pl-pds">"</span></span><span class="pl-k">:</span> value2] <span class="pl-c"><span class="pl-c">//</span>how can you even read that?!</span></pre></div>
+</li>
+</ul>
+<h3>
+<a id="constants" class="anchor" href="Swift.htm#constants" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constants</h3>
+<ul>
+<li>
+<p>Define constants for unchanging pieces of data in the code. Some examples are <code>CGFloat</code> constants for cell heights, string constants for cell identifiers, key names (for KVC and dictionaries), or segue identifiers.</p>
+</li>
+<li>
+<p>Where possible, keep constants private to the file they are related to.</p>
+</li>
+<li>
+<p>File-level constants must be declared with <code>fileprivate let</code>.</p>
+</li>
+<li>
+<p>File-level constants must be capital camel-cased to indicate that they are named constants instead of properties.</p>
+</li>
+<li>
+<p>If the constant will be used outside of one file, <code>fileprivate</code> must be omitted.</p>
+</li>
+<li>
+<p>If the constant will be used outside of the module, it must be declared <code>public</code> (mostly useful for Pods or shared libraries).</p>
+</li>
+<li>
+<p>If the constant is declared within a class or struct, it must be declared <code>static</code> to avoid declaring one constant per instance.</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span>SomeTableCell.swift</span>
+<span class="pl-c"></span>
+<span class="pl-c"><span class="pl-c">//</span>not declared private since it is used in another file</span>
+<span class="pl-c"></span><span class="pl-k">let</span> SomeTableCellIdentifier <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>SomeTableCell<span class="pl-pds">"</span></span>
+
+<span class="pl-k">class</span> <span class="pl-en">SomeTableCell</span>: <span class="pl-e">UITableViewCell </span>{
+    <span class="pl-k">...</span>
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span>ATableViewController.swift</span>
+<span class="pl-c"></span>
+<span class="pl-c"><span class="pl-c">//</span>declared fileprivate since it isn't used outside this file</span>
+<span class="pl-c"></span><span class="pl-k">fileprivate</span> <span class="pl-k">let</span> RowHeight<span class="pl-k">:</span> CGFloat <span class="pl-k">=</span> <span class="pl-c1">150.0</span>
+
+<span class="pl-k">class</span> <span class="pl-en">ATableViewController</span>: <span class="pl-e">UITableViewController </span>{
+
+    <span class="pl-k">...</span>
+
+    <span class="pl-k">private</span> <span class="pl-k">func</span> <span class="pl-en">configureTableView</span>() {
+        tableView.<span class="pl-smi">rowHeight</span> <span class="pl-k">=</span> RowHeight
+    }
+
+    <span class="pl-k">func</span> <span class="pl-en">tableView</span>(<span class="pl-smi"><span class="pl-en">tableView</span></span>: UITableView, <span class="pl-en">cellForRowAtIndexPath</span> <span class="pl-smi">indexPath</span>: NSIndexPath) <span class="pl-k">-&gt;</span> UITableViewCell {
+        <span class="pl-k">return</span> tableView.<span class="pl-c1">dequeueReusableCellWithIdentifier</span>(SomeTableCellIdentifier, <span class="pl-c1">forIndexPath</span>: indexPath)
+    }
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="function-parameters" class="anchor" href="Swift.htm#function-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Function Parameters</h3>
+<ul>
+<li>Follow the Swift API Design Guidelines for proper handling of <a href="https://swift.org/documentation/api-design-guidelines/#parameter-names" rel="nofollow">function parameters</a> and <a href="https://swift.org/documentation/api-design-guidelines/#argument-labels" rel="nofollow">argument labels</a>.</li>
+</ul>
+<h3>
+<a id="semicolons" class="anchor" href="Swift.htm#semicolons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Semicolons</h3>
+<ul>
+<li>Forget them. They're dead to us.</li>
+<li>Don't you dare put multiple statements on one line.</li>
+</ul>
+<h3>
+<a id="typealiases" class="anchor" href="Swift.htm#typealiases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Typealiases</h3>
+<ul>
+<li>
+<p>Create <code>typealias</code>es to give semantic meaning to commonly used datatypes and closures.</p>
+</li>
+<li>
+<p><code>typealias</code> is equivalent to <code>typedef</code> in C and should be used for making names for types.</p>
+</li>
+<li>
+<p>Where appropriate, nest <code>typealias</code>es inside parent types (classes, structs, etc.) to which they relate.</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">typealias</span> <span class="pl-en">IndexRange</span> <span class="pl-k">=</span> <span class="pl-c1">Range</span>&lt;<span class="pl-c1">Int</span>&gt;
+
+<span class="pl-k">typealias</span> <span class="pl-en">JSONObject</span> <span class="pl-k">=</span> [<span class="pl-c1">String</span>: <span class="pl-c1">AnyObject</span>]
+
+<span class="pl-k">typealias</span> <span class="pl-en">APICompletion</span> <span class="pl-k">=</span> (jsonResult: [JSONObject]<span class="pl-k">?</span>, error: NSError<span class="pl-k">?</span>) <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span>
+
+<span class="pl-k">typealias</span> <span class="pl-en">BasicBlock</span> <span class="pl-k">=</span> () <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span></pre></div>
+</li>
+</ul>
+<h3>
+<a id="flow-control" class="anchor" href="Swift.htm#flow-control" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Flow Control</h3>
+<ul>
+<li>
+<p>For single conditional statements, do not use parentheses.</p>
+</li>
+<li>
+<p>Use parentheses around compound conditional statements for clarity or to make the order of operations explicit.</p>
+</li>
+<li>
+<p>When using optional booleans and optional <code>NSNumber</code>s that represent booleans, check for <code>true</code> or <code>false</code> rather than using the nil-coalescing operator:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">if</span> user.<span class="pl-smi">isCurrent</span><span class="pl-k">?</span>.<span class="pl-c1">boolValue</span> <span class="pl-k">??</span> <span class="pl-c1">false</span> {
+    <span class="pl-c"><span class="pl-c">//</span> isCurrent is true</span>
+<span class="pl-c"></span>} <span class="pl-k">else</span> {
+    <span class="pl-c"><span class="pl-c">//</span> isCurrent is nil or false</span>
+<span class="pl-c"></span>}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">if</span> user.<span class="pl-smi">isCurrent</span><span class="pl-k">?</span>.<span class="pl-c1">boolValue</span> <span class="pl-k">==</span> <span class="pl-c1">true</span> {
+    <span class="pl-c"><span class="pl-c">//</span> isCurrent is true</span>
+<span class="pl-c"></span>} <span class="pl-k">else</span> {
+    <span class="pl-c"><span class="pl-c">//</span> isCurrent is nil or false</span>
+<span class="pl-c"></span>}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="switch-statements" class="anchor" href="Swift.htm#switch-statements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Switch Statements</h3>
+<ul>
+<li>
+<p><code>break</code> is not needed between <code>case</code> statements (they don't fall through by default)</p>
+</li>
+<li>
+<p>Use multiple values on a single <code>case</code> where it is appropriate:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> someCharacter<span class="pl-k">:</span> <span class="pl-c1">Character</span>
+
+<span class="pl-k">...</span>
+
+<span class="pl-k">switch</span> someCharacter {
+<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>e<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>i<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>u<span class="pl-pds">"</span></span><span class="pl-k">:</span>
+    <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">\(</span><span class="pl-s1">someCharacter</span><span class="pl-pse"><span class="pl-s1">)</span></span> is a vowel<span class="pl-pds">"</span></span>)
+<span class="pl-k">...</span>
+}</pre></div>
+</li>
+<li>
+<p>When pattern matching over an enum case with an associated value, use <code>case .CASENAME(let ...)</code> rather than <code>case let ...</code> syntax for value binding.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">enum</span> <span class="pl-en">AnEnum</span> {
+    <span class="pl-k">case</span> <span class="pl-c1">foo</span>
+    <span class="pl-k">case</span> <span class="pl-c1">bar</span>(<span class="pl-c1">String</span>)
+    <span class="pl-k">case</span> <span class="pl-c1">baz</span>
+}
+
+<span class="pl-k">let</span> anEnumInstanceWithAssociatedValue <span class="pl-k">=</span> AnEnum.<span class="pl-c1">Bar</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)
+
+<span class="pl-k">switch</span> anEnumInstanceWithAssociatedValue {
+    <span class="pl-k">case</span> .<span class="pl-smi">foo</span><span class="pl-k">:</span> <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Foo<span class="pl-pds">"</span></span>)
+    <span class="pl-c"><span class="pl-c">//</span> Incorrect</span>
+<span class="pl-c"></span>    <span class="pl-k">case</span> <span class="pl-k">let</span> .<span class="pl-c1">bar</span>(barValue)<span class="pl-k">:</span> <span class="pl-c1">print</span>(barValue) <span class="pl-c"><span class="pl-c">//</span> "hello"</span>
+<span class="pl-c"></span>    <span class="pl-k">case</span> .<span class="pl-smi">baz</span><span class="pl-k">:</span> <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Baz<span class="pl-pds">"</span></span>)
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">enum</span> <span class="pl-en">AnEnum</span> {
+    <span class="pl-k">case</span> <span class="pl-c1">foo</span>
+    <span class="pl-k">case</span> <span class="pl-c1">bar</span>(<span class="pl-c1">String</span>)
+    <span class="pl-k">case</span> <span class="pl-c1">baz</span>
+}
+
+<span class="pl-k">let</span> anEnumInstanceWithAssociatedValue <span class="pl-k">=</span> AnEnum.<span class="pl-c1">Bar</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)
+
+<span class="pl-k">switch</span> anEnumInstanceWithAssociatedValue {
+    <span class="pl-k">case</span> .<span class="pl-smi">foo</span><span class="pl-k">:</span> <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Foo<span class="pl-pds">"</span></span>)
+    <span class="pl-c"><span class="pl-c">//</span> Correct</span>
+<span class="pl-c"></span>    <span class="pl-k">case</span> .<span class="pl-c1">bar</span>(<span class="pl-k">let</span> barValue)<span class="pl-k">:</span> <span class="pl-c1">print</span>(barValue) <span class="pl-c"><span class="pl-c">//</span> "hello"</span>
+<span class="pl-c"></span>    <span class="pl-k">case</span> .<span class="pl-smi">baz</span><span class="pl-k">:</span> <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Baz<span class="pl-pds">"</span></span>)
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="use-implicit-getters" class="anchor" href="Swift.htm#use-implicit-getters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use Implicit Getters</h3>
+<ul>
+<li>
+<p>When possible, omit the <code>get</code> keyword on read-only, computed properties and read-only subscripts as recommended by Apple under <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID259" rel="nofollow">Read-Only Computed Properties</a>:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> someProperty<span class="pl-k">:</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">get</span> {
+        <span class="pl-k">return</span> <span class="pl-c1">4</span> <span class="pl-k">*</span> someOtherProperty
+    }
+}
+
+<span class="pl-k">subscript</span>(<span class="pl-c1">index</span>: <span class="pl-c1">Int</span>) <span class="pl-k">-&gt;</span> T {
+    <span class="pl-k">get</span> {
+        <span class="pl-k">return</span> object[index]
+    }
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> someProperty<span class="pl-k">:</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">return</span> <span class="pl-c1">4</span> <span class="pl-k">*</span> someOtherProperty
+}
+
+<span class="pl-k">subscript</span>(<span class="pl-c1">index</span>: <span class="pl-c1">Int</span>) <span class="pl-k">-&gt;</span> T {
+    <span class="pl-k">return</span> object[index]
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="loops" class="anchor" href="Swift.htm#loops" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loops</h3>
+<ul>
+<li>
+<p>Use the <code>enumerated()</code> function if you need to loop over a Sequence and use the index:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">for</span> (index, element) <span class="pl-k">in</span> someArray.<span class="pl-c1">enumerated</span>() {
+    <span class="pl-k">...</span>
+}</pre></div>
+</li>
+<li>
+<p>Use <code>map</code> when transforming Arrays (<code>compactMap</code> for Arrays of Optionals or <code>flatMap</code> for Arrays of Arrays):</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> array <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>]
+<span class="pl-k">let</span> stringArray <span class="pl-k">=</span> array.<span class="pl-c1">map</span> { item <span class="pl-k">in</span>
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>item <span class="pl-pse">\(</span><span class="pl-s1">item</span><span class="pl-pse"><span class="pl-s1">)</span></span><span class="pl-pds">"</span></span>
+}
+
+<span class="pl-k">let</span> optionalArray<span class="pl-k">:</span> [<span class="pl-c1">Int</span><span class="pl-k">?</span>] <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">nil</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">nil</span>]
+<span class="pl-k">let</span> nonOptionalArray <span class="pl-k">=</span> optionalArray.<span class="pl-smi">compactMap</span> { item <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span><span class="pl-k">?</span> <span class="pl-k">in</span>
+    <span class="pl-k">guard</span> <span class="pl-k">let</span> item <span class="pl-k">=</span> item <span class="pl-k">else</span> {
+        <span class="pl-k">return</span> <span class="pl-c1">nil</span>
+    }
+
+    <span class="pl-k">return</span> item <span class="pl-k">*</span> <span class="pl-c1">2</span>
+}
+
+<span class="pl-k">let</span> arrayOfArrays <span class="pl-k">=</span> [array, nonOptionalArray]
+<span class="pl-k">let</span> anotherStringArray <span class="pl-k">=</span> arrayOfArrays.<span class="pl-smi">flatmap</span> { item <span class="pl-k">in</span>
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>thing <span class="pl-pse">\(</span><span class="pl-s1">item</span><span class="pl-pse"><span class="pl-s1">)</span></span><span class="pl-pds">"</span></span>
+}</pre></div>
+</li>
+<li>
+<p>If you are not performing a transform, or if there are side effects <em>do not</em> use <code>map</code>/<code>flatmap</code>; use a <code>for in</code> loop instead (<a href="http://www.mokacoding.com/blog/when-to-use-map-flatmap-for/" rel="nofollow">tips</a>).</p>
+</li>
+<li>
+<p>Avoid the use of <code>forEach</code> except for simple one line closures, similar to <code>makeObjectsPerformSelector:</code> in Objective-C.</p>
+</li>
+</ul>
+<h2>
+<a id="shoulds" class="anchor" href="Swift.htm#shoulds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shoulds</h2>
+<h3>
+<a id="declaring-variables" class="anchor" href="Swift.htm#declaring-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Declaring Variables</h3>
+<ul>
+<li>
+<p>When declaring variables you should be verbose, but not too verbose.</p>
+</li>
+<li>
+<p>Avoid repeating type information. Once should be enough.</p>
+</li>
+<li>
+<p>Make the name descriptive.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> someDictionary<span class="pl-k">:</span> <span class="pl-c1">Dictionary</span> <span class="pl-k">=</span> [<span class="pl-c1">String</span><span class="pl-k">:</span> <span class="pl-c1">String</span>]() <span class="pl-c"><span class="pl-c">//</span>Dictionary is redundant</span>
+<span class="pl-c"></span><span class="pl-k">var</span> somePoint<span class="pl-k">:</span> CGPoint <span class="pl-k">=</span> <span class="pl-c1">CGPoint</span>(<span class="pl-c1">x</span>:<span class="pl-c1">100</span>, <span class="pl-c1">y</span>: <span class="pl-c1">200</span>) <span class="pl-c"><span class="pl-c">//</span>CGPoint is repeated</span>
+<span class="pl-c"></span><span class="pl-k">var</span> b <span class="pl-k">=</span> <span class="pl-c1">Bool</span>(<span class="pl-c1">false</span>) <span class="pl-c"><span class="pl-c">//</span>b is not a descriptive name</span></pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> someArray <span class="pl-k">=</span> [<span class="pl-c1">String</span>]()
+<span class="pl-k">var</span> someArray<span class="pl-k">:</span> [<span class="pl-c1">String</span>] <span class="pl-k">=</span> []
+<span class="pl-k">var</span> someDictionary <span class="pl-k">=</span> [<span class="pl-c1">String</span><span class="pl-k">:</span> <span class="pl-c1">Int</span>]()
+<span class="pl-k">var</span> someDictionary<span class="pl-k">:</span> [<span class="pl-c1">String</span> <span class="pl-k">:</span> <span class="pl-c1">Int</span>] <span class="pl-k">=</span> [<span class="pl-k">:</span>]
+<span class="pl-k">var</span> countOfCats<span class="pl-k">:</span> <span class="pl-c1">UInt32</span> <span class="pl-k">=</span> <span class="pl-c1">12</span>
+<span class="pl-k">var</span> isMadeOfCheese <span class="pl-k">=</span> <span class="pl-c1">false</span>
+<span class="pl-k">var</span> somePoint <span class="pl-k">=</span> <span class="pl-c1">CGPoint</span>(<span class="pl-c1">x</span>:<span class="pl-c1">100</span>, <span class="pl-c1">y</span>: <span class="pl-c1">200</span>)</pre></div>
+</li>
+</ul>
+<h3>
+<a id="optionals-1" class="anchor" href="Swift.htm#optionals-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optionals</h3>
+<h4>
+<a id="guard-let-vs-if-let" class="anchor" href="Swift.htm#guard-let-vs-if-let" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>guard let</code> vs. <code>if let</code></h4>
+<ul>
+<li>
+<p>Use <code>guard let</code> over <code>if let</code> where possible. This improves readability by <a href="http://natashatherobot.com/swift-guard-better-than-if/" rel="nofollow">focusing on the happy-path</a> and can also reduce nesting by keeping your code flatter:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">if</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string) {
+        <span class="pl-c"><span class="pl-c">//</span> Nested</span>
+<span class="pl-c"></span>        UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+    }
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string) <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+    }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+</li>
+<li>
+<p>Since <code>guard let</code> needs to exit the current scope upon failure, <code>if let</code> is better suited for situations where you still need to move forward after failing to unwrap an optional:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">if</span> <span class="pl-k">let</span> anImage <span class="pl-k">=</span> <span class="pl-c1">UIImage</span>(<span class="pl-c1">named</span>: ImageNames.<span class="pl-smi">background</span>) {
+    imageView.<span class="pl-c1">image</span> <span class="pl-k">=</span> anImage
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Do more configuration</span>
+<span class="pl-c"><span class="pl-c">//</span> ...</span></pre></div>
+</li>
+</ul>
+<h3>
+<a id="spacing-1" class="anchor" href="Swift.htm#spacing-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Spacing</h3>
+<ul>
+<li>
+<p>Use a newline for each logical step when chaining 3 or more methods together in a fluent style:</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">foo</span>() <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">let</span> nums<span class="pl-k">:</span> [<span class="pl-c1">Int</span>] <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>, <span class="pl-c1">10</span>]
+
+    <span class="pl-k">return</span> nums.<span class="pl-c1">map</span> { <span class="pl-c1">$0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> }.<span class="pl-c1">filter</span> { <span class="pl-c1">$0</span> <span class="pl-k">%</span> <span class="pl-c1">2</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }.<span class="pl-c1">reduce</span>(<span class="pl-c1">0</span>, <span class="pl-k">+</span>)
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">foo</span>() <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">let</span> nums<span class="pl-k">:</span> [<span class="pl-c1">Int</span>] <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>, <span class="pl-c1">10</span>]
+
+    <span class="pl-k">return</span> nums
+        .<span class="pl-c1">map</span> { <span class="pl-c1">$0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> }
+        .<span class="pl-c1">filter</span> { <span class="pl-c1">$0</span> <span class="pl-k">%</span> <span class="pl-c1">2</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }
+        .<span class="pl-c1">reduce</span>(<span class="pl-c1">0</span>, <span class="pl-k">+</span>)
+}</pre></div>
+</li>
+<li>
+<p>For <code>guard</code> statements, the <code>else {</code> may be placed on its own line after the last condition (rather than on the same line as the last condition).  For a single-condition <code>guard</code>, if the <code>else {</code> is on its own line, the condition should be on its own line, too.  If the <code>else</code> clause of a <code>guard</code> statement is a simple <code>return</code> statement, it may be all on one line.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string)
+        <span class="pl-k">else</span> {
+            <span class="pl-k">return</span>
+    }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span> <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree
+    <span class="pl-k">else</span> { <span class="pl-k">return</span> }</pre></div>
+<p><strong>Correct</strong> (lots of choices here)</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string) <span class="pl-k">else</span> {
+        <span class="pl-k">return</span>
+    }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string) <span class="pl-k">else</span> { <span class="pl-k">return</span> }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span>
+        <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string)
+        <span class="pl-k">else</span> {
+            <span class="pl-k">return</span>
+    }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">openURL</span>(<span class="pl-smi"><span class="pl-en">string</span></span>: <span class="pl-c1">String</span>) {
+    <span class="pl-k">guard</span>
+        <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: string)
+        <span class="pl-k">else</span> { <span class="pl-k">return</span> }
+    <span class="pl-c"><span class="pl-c">//</span> Flat</span>
+<span class="pl-c"></span>    UIApplication.<span class="pl-smi">shared</span>.<span class="pl-c1">open</span>(url)
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree <span class="pl-k">else</span> { <span class="pl-k">return</span> }</pre></div>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">guard</span>
+    <span class="pl-k">let</span> constantOne <span class="pl-k">=</span> valueOne,
+    <span class="pl-k">let</span> constantTwo <span class="pl-k">=</span> valueTwo,
+    <span class="pl-k">let</span> constantThree <span class="pl-k">=</span> valueThree
+    <span class="pl-k">else</span> { <span class="pl-k">return</span> }</pre></div>
+</li>
+<li>
+<p>When grouping multiple <code>case</code>s in a <code>switch</code> statement, prefer putting each case on its own line, unless there are only a few cases and they are short.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">switch</span> something {
+<span class="pl-k">case</span> .<span class="pl-smi">oneLongCase</span>, .<span class="pl-smi">anotherLongCase</span>, .<span class="pl-smi">thereAreMoreCases</span>, .<span class="pl-smi">thisIsWayTooFarToTheRight</span><span class="pl-k">:</span>
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>
+<span class="pl-k">case</span> .<span class="pl-smi">sanity</span><span class="pl-k">:</span>
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">switch</span> something {
+<span class="pl-k">case</span> .<span class="pl-smi">oneLongCase</span>,
+     .<span class="pl-smi">anotherLongCase</span>,
+     .<span class="pl-smi">thereAreMoreCases</span>,
+     .<span class="pl-smi">thisIsInASanerPlace</span><span class="pl-k">:</span>
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>
+<span class="pl-k">case</span> .<span class="pl-smi">sanity</span><span class="pl-k">:</span>
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="usage-of-self" class="anchor" href="Swift.htm#usage-of-self" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage of <code>self</code></h3>
+<ul>
+<li>Except where necessary, avoid using <code>self.</code>.  If you have a local variable that conflicts with a property name or are in a context where <code>self</code> is captured, you may need to use <code>self.</code>.</li>
+</ul>
+<h3>
+<a id="loops-1" class="anchor" href="Swift.htm#loops-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loops</h3>
+<ul>
+<li>
+<p>If you have an Array of Arrays and want to loop over all contents, consider a <code>for in</code> loop using <code>joined(separator:)</code> instead of nested loops:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> arraysOfNames <span class="pl-k">=</span> [[<span class="pl-s"><span class="pl-pds">"</span>Moe<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Larry<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Curly<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>Groucho<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Chico<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Harpo<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Zeppo<span class="pl-pds">"</span></span>]]</pre></div>
+<p><strong>Recommended</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">for</span> name <span class="pl-k">in</span> arraysOfNames.<span class="pl-c1">joined</span>() {
+    <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">\(</span><span class="pl-s1">name</span><span class="pl-pse"><span class="pl-s1">)</span></span> is an old-timey comedian<span class="pl-pds">"</span></span>)
+}</pre></div>
+<p><strong>Discouraged</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">for</span> names <span class="pl-k">in</span> arraysOfNames {
+    <span class="pl-k">for</span> name <span class="pl-k">in</span> names {
+        <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">\(</span><span class="pl-s1">name</span><span class="pl-pse"><span class="pl-s1">)</span></span> is an old-timey comedian<span class="pl-pds">"</span></span>)
+    }
+}</pre></div>
+</li>
+</ul>
+<h3>
+<a id="closures-1" class="anchor" href="Swift.htm#closures-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Closures</h3>
+<ul>
+<li>
+<p>Avoid unnecessary parentheses around closure parameters.</p>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre>functionWithAClosure { (result) <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre>functionWithAClosure { (result) <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span> <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre>functionWithAClosure { result <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre>functionWithAClosure { result <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span> <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}</pre></div>
+<div class="highlight highlight-source-swift"><pre>functionWithAClosure { (<span class="pl-c1">result</span>: <span class="pl-c1">String</span>) <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}</pre></div>
+</li>
+</ul>
+<h4>
+<a id="trailing-closure-syntax" class="anchor" href="Swift.htm#trailing-closure-syntax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trailing Closure Syntax</h4>
+<ul>
+<li>
+<p>Use trailing closure syntax when the only or last argument to a function or method is a closure and there is only one closure parameter.</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-c"><span class="pl-c">//</span>a function that has a completion closure/block</span>
+<span class="pl-c"></span><span class="pl-k">func</span> <span class="pl-en">registerUser</span>(<span class="pl-smi"><span class="pl-en">user</span></span>: User, <span class="pl-smi"><span class="pl-en">completion</span></span>: (Result) <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span>)</pre></div>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre>UserAPI.<span class="pl-c1">registerUser</span>(user) { result <span class="pl-k">in</span>
+    <span class="pl-k">if</span> result.<span class="pl-smi">success</span> {
+        <span class="pl-k">...</span>
+    }
+}</pre></div>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre>UserAPI.<span class="pl-c1">registerUser</span>(user, <span class="pl-c1">completion</span>: { result <span class="pl-k">in</span>
+    <span class="pl-k">if</span> result.<span class="pl-smi">success</span> {
+        <span class="pl-k">...</span>
+    }
+})
+</pre></div>
+</li>
+<li>
+<p>Omit the empty parens <code>()</code> when the only argument is a closure.</p>
+<p><strong>Correct</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> doubled <span class="pl-k">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>].<span class="pl-c1">map</span> { <span class="pl-c1">$0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> }</pre></div>
+<p><strong>Incorrect</strong></p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> doubled <span class="pl-k">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>].<span class="pl-c1">map</span>() { <span class="pl-c1">$0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> }</pre></div>
+</li>
+<li>
+<p>NOTE: Whether the argument list to a closure is directly after the opening <code>{</code> or on the next line is up to individual preference. However, it should be consistent throughout a project. In the code standards, we're leaving it on the same line to conserve space.</p>
+</li>
+</ul>
+<h3>
+<a id="operator-overloading--custom-operators" class="anchor" href="Swift.htm#operator-overloading--custom-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Operator Overloading + Custom Operators</h3>
+<ul>
+<li>The use of operator overloading and custom operators is <strong>strongly discouraged</strong> as this can hurt readability and potentially create a significant amount of confusion for other developers on a shared project. There are cases that it would be necessary (ex. overloading <code>==</code> to conform to <code>Equatable</code>). When writing a custom operator or overloading an existing one, the operator function should call another <strong>explicitly named</strong> function that performs that actual work. For more guidance on best practices on this matter, view the guidelines at the bottom of this <a href="http://nshipster.com/swift-operators/#guidelines-for-swift-operators" rel="nofollow">NSHipster article</a>.</li>
+</ul>
+<h3>
+<a id="tuples" class="anchor" href="Swift.htm#tuples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tuples</h3>
+<ul>
+<li>
+<p>The word is pronounced like "tuh-ple"</p>
+</li>
+<li>
+<p>Rhymes with "couple" and "supple"</p>
+</li>
+<li>
+<p>Name the members of your tuples when creating or decomposing tuples:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> foo <span class="pl-k">=</span> (<span class="pl-c1">something</span>: <span class="pl-s"><span class="pl-pds">"</span>cats<span class="pl-pds">"</span></span>, <span class="pl-c1">somethingElse</span>: <span class="pl-c1">909_099</span>)
+<span class="pl-k">let</span> (something, somethingElse) <span class="pl-k">=</span> foo</pre></div>
+</li>
+</ul>
+<h3>
+<a id="constants-1" class="anchor" href="Swift.htm#constants-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constants</h3>
+<ul>
+<li>
+<p>Declare constants with <code>static let</code> to ensure static storage.</p>
+</li>
+<li>
+<p>Prefer declaring constants in the scope in which they will be used rather than in a central shared constants file like <em>Constants.swift</em>.</p>
+</li>
+<li>
+<p>Be wary of large constants files as they can become unmanageable over time. Refactor related parts of the main constants file into separate files for that situation.</p>
+</li>
+<li>
+<p>Use <code>enum</code>s to group related constants together in a namespace. The name of the <code>enum</code> should be singular, and each constant should be written using camelCase.  (Using a <code>case</code>-less <code>enum</code> prevents useless instances from being created.)</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">enum</span> <span class="pl-en">SegueIdentifier</span> {
+    <span class="pl-k">static</span> <span class="pl-k">let</span> onboarding <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>OnboardingSegue<span class="pl-pds">"</span></span>
+    <span class="pl-k">static</span> <span class="pl-k">let</span> login <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>LoginSegue<span class="pl-pds">"</span></span>
+    <span class="pl-k">static</span> <span class="pl-k">let</span> logout <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>LogoutSegue<span class="pl-pds">"</span></span>
+}
+
+<span class="pl-k">enum</span> <span class="pl-en">StoryboardIdentifier</span> {
+    <span class="pl-k">static</span> <span class="pl-k">let</span> main <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Main<span class="pl-pds">"</span></span>
+    <span class="pl-k">static</span> <span class="pl-k">let</span> onboarding <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Onboarding<span class="pl-pds">"</span></span>
+    <span class="pl-k">static</span> <span class="pl-k">let</span> settings <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Settings<span class="pl-pds">"</span></span>
+}
+
+<span class="pl-c1">print</span>(SegueIdentifier.<span class="pl-smi">login</span>) <span class="pl-c"><span class="pl-c">//</span> "LoginSegue"</span></pre></div>
+</li>
+<li>
+<p>Where appropriate, constants can also be grouped using an <code>enum</code> with a <code>rawValue</code> type that is relevant to the type you need to work with. An <code>enum</code> with a <code>rawValue</code> of type <code>String</code> will <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID149" rel="nofollow">implicitly assign</a> its <code>rawValue</code> from the name of the case if nothing is already explicitly defined for the <code>rawValue</code>. This can be useful when all the names of the cases match with the value of the constant. Be aware that if you use <code>enum</code> <code>case</code>s for constants in this way, you need to explicitly use <code>rawValue</code> every time you need to access the value of the constant:</p>
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">enum</span> <span class="pl-en">UserJSONKeys</span>: <span class="pl-e"><span class="pl-c1">String</span> </span>{
+    <span class="pl-k">case</span> <span class="pl-c1">username</span>
+    <span class="pl-k">case</span> <span class="pl-c1">email</span>
+    <span class="pl-k">case</span> <span class="pl-c1">role</span>
+    <span class="pl-c"><span class="pl-c">//</span> Explicitly defined rawValue</span>
+<span class="pl-c"></span>    <span class="pl-k">case</span> <span class="pl-c1">identifier</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>
+    <span class="pl-k">...</span>
+}
+
+<span class="pl-c1">print</span>(UserJSONKeys.<span class="pl-smi">username</span>.<span class="pl-c1">rawValue</span>) <span class="pl-c"><span class="pl-c">//</span> "username"</span>
+<span class="pl-c"></span><span class="pl-c1">print</span>(UserJSONKeys.<span class="pl-smi">identifier</span>.<span class="pl-c1">rawValue</span>) <span class="pl-c"><span class="pl-c">//</span> "id"</span>
+<span class="pl-c"></span>
+<span class="pl-k">guard</span> <span class="pl-k">let</span> url <span class="pl-k">=</span> <span class="pl-c1">URL</span>(<span class="pl-c1">string</span>: <span class="pl-s"><span class="pl-pds">"</span>http://www.example.com<span class="pl-pds">"</span></span>) <span class="pl-k">else</span> {
+    <span class="pl-k">return</span>
+}
+
+<span class="pl-k">let</span> mutableURLRequest <span class="pl-k">=</span> <span class="pl-c1">NSMutableURLRequest</span>(<span class="pl-c1">url</span>: url)
+mutableURLRequest.<span class="pl-smi">HTTPMethod</span> <span class="pl-k">=</span> HTTPMethods.<span class="pl-smi">POST</span>.<span class="pl-c1">rawValue</span>
+<span class="pl-c1">print</span>(mutableURLRequest.<span class="pl-smi">httpMethod</span>) <span class="pl-c"><span class="pl-c">//</span> "POST"</span></pre></div>
+</li>
+</ul>
+<h3>
+<a id="default-initializers" class="anchor" href="Swift.htm#default-initializers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Initializers</h3>
+<ul>
+<li>Use <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID213" rel="nofollow">default initializers</a> where possible.</li>
+</ul>
+<h3>
+<a id="classes-vs-structs" class="anchor" href="Swift.htm#classes-vs-structs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classes vs Structs</h3>
+<ul>
+<li>Most of your custom data types should be structs and enums.</li>
+<li>Some situations where you may want to use classes:
+<ul>
+<li>When you need the data sharing capabilities of reference types.</li>
+<li>When you need deinitializers to help free up any resources.</li>
+<li>When you need runtime class type checks.</li>
+<li>When you need Objective-C interoperability.</li>
+<li>When you need inheritance after considering all other possibilities like: protocols, protocol inheritance, protocol extensions with default implementations, generics.</li>
+</ul>
+</li>
+<li>Refer to the <a href="https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html" rel="nofollow">Swift Programming Language Guidelines</a> and <a href="https://developer.apple.com/documentation/swift/choosing_between_structures_and_classes" rel="nofollow">Choosing Between Structures and Classes</a> for detailed info on this topic.</li>
+</ul>
+<h2>
+<a id="tips--tricks" class="anchor" href="Swift.htm#tips--tricks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tips &amp; Tricks</h2>
+<h3>
+<a id="simplify-xcodes-autocompletion-suggestions" class="anchor" href="Swift.htm#simplify-xcodes-autocompletion-suggestions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simplify Xcode's Autocompletion Suggestions</h3>
+<ul>
+<li>
+<p>Xcode will try to be helpful when autocompleting closures for you by giving you the <em>full</em> type signature of the closure (input type(s) and return type). Simplify that information so that it's easier to read.</p>
+</li>
+<li>
+<p>Remove return types of <code>Void</code> and parentheses around single input parameters.  This is especialy relevant if the closure takes no input and returns no output.</p>
+<p><strong>What Xcode Autocompletion Suggests</strong></p>
+<div class="highlight highlight-source-swift"><pre>UIView.<span class="pl-c1">animate</span>(<span class="pl-c1">withDuration</span>: <span class="pl-c1">0.5</span>) { () <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span> <span class="pl-k">in</span>
+    <span class="pl-k">...</span>
+}
+
+UIView.<span class="pl-c1">animate</span>(<span class="pl-c1">withDuration</span>: <span class="pl-c1">0.5</span>, <span class="pl-c1">animations</span>: { () <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span> <span class="pl-k">in</span>
+        <span class="pl-k">...</span>   
+    }) { (complete) <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span> <span class="pl-k">in</span>
+        <span class="pl-k">...</span>
+}</pre></div>
+<p><strong>Simplified With Type Inference</strong></p>
+<div class="highlight highlight-source-swift"><pre>UIView.<span class="pl-c1">animate</span>(<span class="pl-c1">withDuration</span>: <span class="pl-c1">0.5</span>) {
+    <span class="pl-c"><span class="pl-c">//</span>no need to specify type information for a no input, no output closure</span>
+<span class="pl-c"></span>}
+
+<span class="pl-c"><span class="pl-c">//</span>note the formatting of this example is further changed from the suggestion for better readability</span>
+<span class="pl-c"></span>UIView.<span class="pl-c1">animate</span>(<span class="pl-c1">withDuration</span>: <span class="pl-c1">0.5</span>,
+    <span class="pl-c1">animations</span>: {
+        <span class="pl-k">...</span>    
+    },
+    <span class="pl-c1">completion</span>: { complete <span class="pl-k">in</span>
+        <span class="pl-c"><span class="pl-c">//</span>the return type is inferred to be `Void` and `complete` does not need parens</span>
+<span class="pl-c"></span>    }
+)</pre></div>
+</li>
+</ul>
+</section>
+
+<footer class="site-footer">
+    © 2015—2020 DatNM, LLC
+</footer>
+
+<span id="und-addon-container" data-w="36px" data-h="73px" style="height: 73px; width: 36px; right: 0px; left: auto; top: 40%; bottom: auto; margin-left: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; display: block;"><span id="und-addon-play-btn-up" class="und-addon-play-btn und-addon-play-side-right und-addon-btn-hoverable" style="background-image: url(&quot;chrome-extension://dbofniohnfjigodceiebfkcfdhncnici/img/arrow-up.svg&quot;); opacity: 0.4; width: 36px; height: 36px; display: none;"></span><span id="und-addon-play-btn-dn" class="und-addon-play-btn und-addon-play-side-right und-addon-btn-hoverable" style="background-image: url(&quot;chrome-extension://dbofniohnfjigodceiebfkcfdhncnici/img/arrow-dn.svg&quot;); opacity: 0.4; width: 36px; height: 36px; display: block; margin: 37px 0px 0px;"></span></span></body></html>

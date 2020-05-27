@@ -1,0 +1,732 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-veKG2ootplNGLwNEW5It4+lJXwpdOVR1Ry4MBDNvdgL6OgBkiAXaZAZnIKkw6sIygnfGqQhR5q7UdS1llqd6/g==" rel="stylesheet" href="./objective-c-1_files/frameworks-bde286da8a2da653462f03445b922de3.css">
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-QU7sxL9jqzOEVzGJyA/srMb5y1UgwOTWJ2SL4UJx2Hl4DlGmnSTiFTRUUK1WAOSAlTzdsLHypOuAzWfXCWCRRw==" rel="stylesheet" href="./objective-c-1_files/github-414eecc4bf63ab3384573189c80fecac.css">
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>coding-style-guide/objective-c-1.md at master · ApvDatNM/coding-style-guide</title>
+    <meta name="description" content="Contribute to ApvDatNM/coding-style-guide development by creating an account on GitHub.">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/56908901?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="ApvDatNM/coding-style-guide"><meta name="twitter:description" content="Contribute to ApvDatNM/coding-style-guide development by creating an account on GitHub.">
+    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/56908901?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="ApvDatNM/coding-style-guide"><meta property="og:url" content="https://github.com/ApvDatNM/coding-style-guide"><meta property="og:description" content="Contribute to ApvDatNM/coding-style-guide development by creating an account on GitHub.">
+
+  <link rel="assets" href="https://github.githubassets.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTM2MjA2NzY4OmMxZDIzYzQ1NmY3YTZkNGE1YmNiZDJiMjRmYWQ0NTEzNjVmZmMxNjI1YjgzZTcxMGZlMzAzODFkZTE2ZTA2Yzg=--0f58438ea773ad6f1914a30288456410c1d195a0">
+  <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+  
+
+
+
+  
+
+  
+
+  
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+<meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-ga_id" content="446732374.1590568273" class="js-octo-ga-id"><meta name="octolytics-actor-id" content="56908901"><meta name="octolytics-actor-login" content="ApvDatNM"><meta name="octolytics-actor-hash" content="e1f06bec01127a0f852e5342769f08e3e43e45b4485d52cf02984938ff741f33">
+
+
+
+<meta name="optimizely-sdk-key" content="cowimJNste4j7QnBNCjaw">
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="8411330b7c5df91216141ef7b0acf43a">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="ApvDatNM">
+
+      <meta name="expected-hostname" content="github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="Y2Y2ZWI5ODIzZjE0YzE4ZmEzMjYwOWZlMzg5MDU3NzZiNzg2NTdmYjc5NDg2ZWU4NzhiNmY4MjNkYTJjZDE0Nnx7InJlbW90ZV9hZGRyZXNzIjoiNDUuMTI1LjIwOS43MSIsInJlcXVlc3RfaWQiOiJCRDlFOjcxM0E6MjRBODAzOjMxQTcyQTo1RUNFMjRGMyIsInRpbWVzdGFtcCI6MTU5MDU2ODE3OSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+
+    <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS,PAGE_STALE_CHECK,JS_CHUNKING">
+
+  <meta http-equiv="x-pjax-version" content="3e8d3b1d0df528e7deffc9321d6e47bc">
+  
+
+      <link href="https://github.com/ApvDatNM/coding-style-guide/commits/master.atom" rel="alternate" title="Recent Commits to coding-style-guide:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/ApvDatNM/coding-style-guide git https://github.com/ApvDatNM/coding-style-guide.git">
+
+  <meta name="octolytics-dimension-user_id" content="56908901"><meta name="octolytics-dimension-user_login" content="ApvDatNM"><meta name="octolytics-dimension-repository_id" content="267247614"><meta name="octolytics-dimension-repository_nwo" content="ApvDatNM/coding-style-guide"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="267247614"><meta name="octolytics-dimension-repository_network_root_nwo" content="ApvDatNM/coding-style-guide"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient=""><meta name="analytics-location" content="/<user-name>/<repo-name>/blob/show" data-pjax-transient=""><meta name="request-id" content="4460:7139:1BE632:25EB5F:5ECE24F4" data-pjax-transient=""><meta name="html-safe-nonce" content="81a88c21b76660f83c23d92ebfd6875d37786d28" data-pjax-transient=""><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9BcHZEYXROTS9jb2Rpbmctc3R5bGUtZ3VpZGUiLCJyZXF1ZXN0X2lkIjoiNDQ2MDo3MTM5OjFCRTYzMjoyNUVCNUY6NUVDRTI0RjQiLCJ2aXNpdG9yX2lkIjoiMzA4NzU5MDc5MTY5NDMzMDU3NSIsInJlZ2lvbl9lZGdlIjoiYXAtc291dGhlYXN0LTEiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient=""><meta name="visitor-hmac" content="24bf460d80a53faabbb747abd9ca46dfc3eb028b99e976fc3916d6dd394ef1ab" data-pjax-transient=""><meta name="github-keyboard-shortcuts" content="repository,source-code" data-pjax-transient=""><link rel="canonical" href="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md" data-pjax-transient=""><link href="https://github.com/ApvDatNM/coding-style-guide/commits/master.atom" rel="alternate" title="Recent Commits to coding-style-guide:master" type="application/atom+xml" data-pjax-transient=""></head>
+
+  <body class="logged-in env-production min-width-lg intent-mouse"><audio class="audio-for-speech" src=""></audio><div class="translate-tooltip-mtz hidden">                    <div class="header">                        <div class="header-controls">                            <span class="sound-translate"></span>                            <span class="settings"></span>                        </div>                        <div class="translate-icons">                            <img class="from" src="">                            <img class="arrow" src="chrome-extension://gafjimepaiecpbmbmgaefokbekhoecaj/images/right-arrow.png">                            <img class="to" src="">                        </div>                    </div>                    <div class="translated-text">                        <div class="words"></div>                        <div class="sentences"></div>                    </div>                </div><span class="translate-button-mtz hidden"></span><audio class="audio-for-speech" src=""></audio><div class="translate-tooltip-mtz hidden">                    <div class="header">                        <div class="header-controls">                            <span class="sound-translate"></span>                            <span class="settings"></span>                        </div>                        <div class="translate-icons">                            <img class="from" src="">                            <img class="arrow" src="chrome-extension://gafjimepaiecpbmbmgaefokbekhoecaj/images/right-arrow.png">                            <img class="to" src="">                        </div>                    </div>                    <div class="translated-text">                        <div class="words"></div>                        <div class="sentences"></div>                    </div>                </div><span class="translate-button-mtz hidden"></span><audio class="audio-for-speech" src=""></audio><div class="translate-tooltip-mtz hidden">                    <div class="header">                        <div class="header-controls">                            <span class="sound-translate"></span>                            <span class="settings"></span>                        </div>                        <div class="translate-icons">                            <img class="from" src="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md">                            <img class="arrow" src="chrome-extension://gafjimepaiecpbmbmgaefokbekhoecaj/images/right-arrow.png">                            <img class="to" src="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md">                        </div>                    </div>                    <div class="translated-text">                        <div class="words"></div>                        <div class="sentences"></div>                    </div>                </div><span class="translate-button-mtz hidden"></span>
+    
+
+    
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+
+
+    <div id="js-flash-container">
+
+
+  <template class="js-flash-template"></template>
+</div>
+
+
+      
+
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
+
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main id="js-repo-pjax-container" data-pjax-container="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
+
+
+<div class="container-lg clearfix new-discussion-timeline  p-responsive">
+  <div class="repository-content ">
+
+    
+    
+
+  
+
+
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="https://github.com/ApvDatNM/coding-style-guide/blob/c7a951ee8c5bfe74abc14a2daf95da13c55289a7/objective-c-1.md">Permalink</a>
+
+    <!-- blob contrib key: blob_contributors:v22:e2b8813cfda367f784a9ab4ba2f5345f -->
+    
+
+    
+
+
+
+    
+
+  
+
+
+
+
+
+
+    <div class="Box mt-3 position-relative
+      ">
+      
+
+
+
+
+      
+  <div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-the-official-raywenderlichcom-objective-c-style-guide" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#the-official-raywenderlichcom-objective-c-style-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The official raywenderlich.com Objective-C style guide.</h1>
+<p>This style guide outlines the coding conventions for raywenderlich.com.</p>
+<h2><a id="user-content-introduction" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.</p>
+<p>This style guide is different from other Objective-C style guides you may see, because the focus is centered on readability for print and the web. Many of the decisions were made with an eye toward conserving space for print, easy legibility, and tutorial writing.</p>
+<h2><a id="user-content-credits" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Credits</h2>
+<p>The creation of this style guide was a collaborative effort from various raywenderlich.com team members under the direction of Nicholas Waynik.  The team includes: <a href="https://github.com/moayes">Soheil Moayedi Azarpour</a>, <a href="https://github.com/ricardo-rendoncepeda">Ricardo Rendon Cepeda</a>, <a href="https://github.com/tdahbura">Tony Dahbura</a>, <a href="https://github.com/ColinEberhardt">Colin Eberhardt</a>, <a href="https://github.com/mattjgalloway">Matt Galloway</a>, <a href="https://github.com/gregheo">Greg Heo</a>, <a href="https://github.com/hollance">Matthijs Hollemans</a>, <a href="https://github.com/elephantronic">Christopher LaPollo</a>, <a href="https://github.com/casademora">Saul Mora</a>, <a href="https://github.com/macandyp">Andy Pereira</a>, <a href="https://github.com/micpringle">Mic Pringle</a>, <a href="https://github.com/pietrorea">Pietro Rea</a>, <a href="https://github.com/funkyboy">Cesare Rocchi</a>, <a href="https://github.com/icanzilb">Marin Todorov</a>, <a href="https://github.com/ndubbs">Nicholas Waynik</a>, and <a href="https://github.com/raywenderlich">Ray Wenderlich</a></p>
+<p>We would like to thank the creators of the <a href="https://github.com/NYTimes/objective-c-style-guide">New York Times</a> and <a href="https://github.com/RobotsAndPencils/objective-c-style-guide">Robots &amp; Pencils'</a> Objective-C Style Guides.  These two style guides provided a solid starting point for this guide to be created and based upon.</p>
+<h2><a id="user-content-background" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#background"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background</h2>
+<p>Here are some of the documents from Apple that informed the style guide. If something isn't mentioned here, it's probably covered in great detail in one of these:</p>
+<ul>
+<li><a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html" rel="nofollow">The Objective-C Programming Language</a></li>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/Introduction/Introduction.html" rel="nofollow">Cocoa Fundamentals Guide</a></li>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html" rel="nofollow">Coding Guidelines for Cocoa</a></li>
+<li><a href="http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/Introduction/Introduction.html" rel="nofollow">iOS App Programming Guide</a></li>
+</ul>
+<h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table of Contents</h2>
+<ul>
+<li><a href="/coding-style-guide/objective-c-1.htm#language">Language</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#code-organization">Code Organization</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#spacing">Spacing</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#comments">Comments</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#naming">Naming</a>
+<ul>
+<li><a href="/coding-style-guide/objective-c-1.htm#underscores">Underscores</a></li>
+</ul>
+</li>
+<li><a href="/coding-style-guide/objective-c-1.htm#methods">Methods</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#variables">Variables</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#property-attributes">Property Attributes</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#dot-notation-syntax">Dot-Notation Syntax</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#literals">Literals</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#constants">Constants</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#enumerated-types">Enumerated Types</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#case-statements">Case Statements</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#private-properties">Private Properties</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#booleans">Booleans</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#conditionals">Conditionals</a>
+<ul>
+<li><a href="/coding-style-guide/objective-c-1.htm#ternary-operator">Ternary Operator</a></li>
+</ul>
+</li>
+<li><a href="/coding-style-guide/objective-c-1.htm#init-methods">Init Methods</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#class-constructor-methods">Class Constructor Methods</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#cgrect-functions">CGRect Functions</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#golden-path">Golden Path</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#error-handling">Error handling</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#singletons">Singletons</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#line-breaks">Line Breaks</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#smiley-face">Smiley Face</a></li>
+<li><a href="/coding-style-guide/objective-c-1.htm#xcode-project">Xcode Project</a></li>
+</ul>
+<h2><a id="user-content-language" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#language"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language</h2>
+<p>US English should be used.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>UIColor *myColor = [UIColor <span class="pl-c1">whiteColor</span>];</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>UIColor *myColour = [UIColor <span class="pl-c1">whiteColor</span>];</pre></div>
+<h2><a id="user-content-code-organization" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#code-organization"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Organization</h2>
+<p>Use <code>#pragma mark -</code> to categorize methods in functional groupings and protocol/delegate implementations following this general structure.</p>
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">pragma mark</span> - Lifecycle
+
+- (<span class="pl-k">instancetype</span>)init {}
+- (<span class="pl-k">void</span>)dealloc {}
+- (<span class="pl-k">void</span>)viewDidLoad {}
+- (<span class="pl-k">void</span>)viewWillAppear:(<span class="pl-c1">BOOL</span>)animated {}
+- (<span class="pl-k">void</span>)didReceiveMemoryWarning {}
+
+#<span class="pl-k">pragma mark</span> - Custom Accessors
+
+- (<span class="pl-k">void</span>)setCustomProperty:(<span class="pl-c1">id</span>)value {}
+- (<span class="pl-c1">id</span>)customProperty {}
+
+#<span class="pl-k">pragma mark</span> - IBActions
+
+- (<span class="pl-k">IBAction</span>)submitData:(<span class="pl-c1">id</span>)sender {}
+
+#<span class="pl-k">pragma mark</span> - Public
+
+- (<span class="pl-k">void</span>)publicMethod {}
+
+#<span class="pl-k">pragma mark</span> - Private
+
+- (<span class="pl-k">void</span>)privateMethod {}
+
+#<span class="pl-k">pragma mark</span> - Protocol conformance
+#<span class="pl-k">pragma mark</span> - UITextFieldDelegate
+#<span class="pl-k">pragma mark</span> - UITableViewDataSource
+#<span class="pl-k">pragma mark</span> - UITableViewDelegate
+
+#<span class="pl-k">pragma mark</span> - NSCopying
+
+- (<span class="pl-c1">id</span>)copyWithZone:(<span class="pl-c1">NSZone</span> *)zone {}
+
+#<span class="pl-k">pragma mark</span> - NSObject
+
+- (<span class="pl-c1">NSString</span> *)description {}</pre></div>
+<h2><a id="user-content-spacing" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#spacing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spacing</h2>
+<ul>
+<li>Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.</li>
+<li>Method braces and other braces (<code>if</code>/<code>else</code>/<code>switch</code>/<code>while</code> etc.) always open on the same line as the statement but close on a new line.</li>
+</ul>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (user.isHappy) {
+  <span class="pl-c"><span class="pl-c">//</span>Do something</span>
+} <span class="pl-k">else</span> {
+  <span class="pl-c"><span class="pl-c">//</span>Do something else</span>
+}</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (user.isHappy)
+{
+    <span class="pl-c"><span class="pl-c">//</span>Do something</span>
+}
+<span class="pl-k">else</span> {
+    <span class="pl-c"><span class="pl-c">//</span>Do something else</span>
+}</pre></div>
+<ul>
+<li>There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.</li>
+<li>Prefer using auto-synthesis. But if necessary, <code>@synthesize</code> and <code>@dynamic</code> should each be declared on new lines in the implementation.</li>
+<li>Colon-aligning method invocation should often be avoided.  There are cases where a method signature may have &gt;= 3 colons and colon-aligning makes the code more readable. Please do <strong>NOT</strong> however colon align methods containing blocks because Xcode's indenting makes it illegible.</li>
+</ul>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c"><span class="pl-c">//</span> blocks are easily readable</span>
+[UIView <span class="pl-c1">animateWithDuration:</span><span class="pl-c1">1.0</span> <span class="pl-c1">animations:</span>^{
+  <span class="pl-c"><span class="pl-c">//</span> something</span>
+} <span class="pl-c1">completion:</span>^(<span class="pl-c1">BOOL</span> finished) {
+  <span class="pl-c"><span class="pl-c">//</span> something</span>
+}];</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c"><span class="pl-c">//</span> colon-aligning makes the block indentation hard to read</span>
+[UIView <span class="pl-c1">animateWithDuration:</span><span class="pl-c1">1.0</span>
+                 <span class="pl-c1">animations:</span>^{
+                     <span class="pl-c"><span class="pl-c">//</span> something</span>
+                 }
+                 <span class="pl-c1">completion:</span>^(<span class="pl-c1">BOOL</span> finished) {
+                     <span class="pl-c"><span class="pl-c">//</span> something</span>
+                 }];</pre></div>
+<h2><a id="user-content-comments" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#comments"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comments</h2>
+<p>When they are needed, comments should be used to explain <strong>why</strong> a particular piece of code does something. Any comments that are used must be kept up-to-date or deleted.</p>
+<p>Block comments should generally be avoided, as code should be as self-documenting as possible, with only the need for intermittent, few-line explanations. <em>Exception: This does not apply to those comments used to generate documentation.</em></p>
+<h2><a id="user-content-naming" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#naming"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming</h2>
+<p>Apple naming conventions should be adhered to wherever possible, especially those related to <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html" rel="nofollow">memory management rules</a> (<a href="http://stackoverflow.com/a/2865194/340508" rel="nofollow">NARC</a>).</p>
+<p>Long, descriptive method and variable names are good.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>UIButton *settingsButton;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>UIButton *setBut;</pre></div>
+<p>A three letter prefix should always be used for class names and constants, however may be omitted for Core Data entity names. For any official raywenderlich.com books, starter kits, or tutorials, the prefix 'RWT' should be used.</p>
+<p>Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">static</span> <span class="pl-c1">NSTimeInterval</span> <span class="pl-k">const</span> RWTTutorialViewControllerNavigationFadeAnimationDuration = <span class="pl-c1">0.3</span>;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">static</span> <span class="pl-c1">NSTimeInterval</span> <span class="pl-k">const</span> fadetime = <span class="pl-c1">1.7</span>;</pre></div>
+<p>Properties should be camel-case with the leading word being lowercase. Use auto-synthesis for properties rather than manual @synthesize statements unless you have good reason.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>@property (strong, nonatomic) <span class="pl-c1">NSString</span> *descriptiveVariableName;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">id</span> varnm;</pre></div>
+<h3><a id="user-content-underscores" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#underscores"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Underscores</h3>
+<p>When using properties, instance variables should always be accessed and mutated using <code>self.</code>. This means that all properties will be visually distinct, as they will all be prefaced with <code>self.</code>.</p>
+<p>An exception to this: inside initializers, the backing instance variable (i.e. _variableName) should be used directly to avoid any potential side effects of the getters/setters.</p>
+<p>Local variables should not contain underscores.</p>
+<h2><a id="user-content-methods" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<p>In method signatures, there should be a space after the method type (-/+ symbol). There should be a space between the method segments (matching Apple's style).  Always include a keyword and be descriptive with the word before the argument which describes the argument.</p>
+<p>The usage of the word "and" is reserved.  It should not be used for multiple parameters as illustrated in the <code>initWithWidth:height:</code> example below.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)setExampleText:(<span class="pl-c1">NSString</span> *)text image:(UIImage *)image;
+- (<span class="pl-k">void</span>)sendAction:(<span class="pl-c1">SEL</span>)aSelector to:(<span class="pl-c1">id</span>)anObject forAllCells:(<span class="pl-c1">BOOL</span>)flag;
+- (<span class="pl-c1">id</span>)viewWithTag:(<span class="pl-c1">NSInteger</span>)tag;
+- (<span class="pl-k">instancetype</span>)initWithWidth:(<span class="pl-c1">CGFloat</span>)width height:(<span class="pl-c1">CGFloat</span>)height;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>-(<span class="pl-k">void</span>)setT:(<span class="pl-c1">NSString</span> *)text i:(UIImage *)image;
+- (<span class="pl-k">void</span>)sendAction:(<span class="pl-c1">SEL</span>)aSelector :(<span class="pl-c1">id</span>)anObject :(<span class="pl-c1">BOOL</span>)flag;
+- (<span class="pl-c1">id</span>)taggedView:(<span class="pl-c1">NSInteger</span>)tag;
+- (<span class="pl-k">instancetype</span>)initWithWidth:(<span class="pl-c1">CGFloat</span>)width andHeight:(<span class="pl-c1">CGFloat</span>)height;
+- (<span class="pl-k">instancetype</span>)initWith:(<span class="pl-k">int</span>)width and:(<span class="pl-k">int</span>)height;  <span class="pl-c"><span class="pl-c">//</span> Never do this.</span></pre></div>
+<h2><a id="user-content-variables" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#variables"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables</h2>
+<p>Variables should be named as descriptively as possible. Single letter variable names should be avoided except in <code>for()</code> loops.</p>
+<p>Asterisks indicating pointers belong with the variable, e.g., <code>NSString *text</code> not <code>NSString* text</code> or <code>NSString * text</code>, except in the case of constants.</p>
+<p><a href="/coding-style-guide/objective-c-1.htm#private-properties">Private properties</a> should be used in place of instance variables whenever possible. Although using instance variables is a valid way of doing things, by agreeing to prefer properties our code will be more consistent.</p>
+<p>Direct access to instance variables that 'back' properties should be avoided except in initializer methods (<code>init</code>, <code>initWithCoder:</code>, etc…), <code>dealloc</code> methods and within custom setters and getters. For more information on using Accessor Methods in Initializer Methods and dealloc, see <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6" rel="nofollow">here</a>.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">RWTTutorial</span> : <span class="pl-e">NSObject</span>
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>) <span class="pl-c1">NSString</span> *tutorialName;
+
+<span class="pl-k">@end</span></pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">RWTTutorial</span> : <span class="pl-e">NSObject</span> {
+  <span class="pl-c1">NSString</span> *tutorialName;
+}</pre></div>
+<h2><a id="user-content-property-attributes" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#property-attributes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Property Attributes</h2>
+<p>Property attributes should be explicitly listed, and will help new programmers when reading the code.  The order of properties should be storage then atomicity, which is consistent with automatically generated code when connecting UI elements from Interface Builder.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>@property (weak, nonatomic) <span class="pl-k">IBOutlet</span> UIView *containerView;
+@property (strong, nonatomic) <span class="pl-c1">NSString</span> *tutorialName;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>@property (nonatomic, weak) <span class="pl-k">IBOutlet</span> UIView *containerView;
+@property (nonatomic) <span class="pl-c1">NSString</span> *tutorialName;</pre></div>
+<p>Properties with mutable counterparts (e.g. NSString) should prefer <code>copy</code> instead of <code>strong</code>.
+Why? Even if you declared a property as <code>NSString</code> somebody might pass in an instance of an <code>NSMutableString</code> and then change it without you noticing that.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>@property (copy, nonatomic) <span class="pl-c1">NSString</span> *tutorialName;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>@property (strong, nonatomic) <span class="pl-c1">NSString</span> *tutorialName;</pre></div>
+<h2><a id="user-content-dot-notation-syntax" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#dot-notation-syntax"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dot-Notation Syntax</h2>
+<p>Dot syntax is purely a convenient wrapper around accessor method calls. When you use dot syntax, the property is still accessed or changed using getter and setter methods.  Read more <a href="https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html" rel="nofollow">here</a></p>
+<p>Dot-notation should <strong>always</strong> be used for accessing and mutating properties, as it makes code more concise. Bracket notation is preferred in all other instances.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSInteger</span> arrayCount = [<span class="pl-c1">self</span>.array <span class="pl-c1">count</span>];
+view.backgroundColor = [UIColor <span class="pl-c1">orangeColor</span>];
+[UIApplication <span class="pl-c1">sharedApplication</span>].delegate;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSInteger</span> arrayCount = self.array.count;
+[view <span class="pl-c1">setBackgroundColor:</span>[UIColor <span class="pl-c1">orangeColor</span>]];
+UIApplication.sharedApplication.delegate;</pre></div>
+<h2><a id="user-content-literals" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#literals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Literals</h2>
+<p><code>NSString</code>, <code>NSDictionary</code>, <code>NSArray</code>, and <code>NSNumber</code> literals should be used whenever creating immutable instances of those objects. Pay special care that <code>nil</code> values can not be passed into <code>NSArray</code> and <code>NSDictionary</code> literals, as this will cause a crash.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSArray</span> *names = @[<span class="pl-s"><span class="pl-pds">@"</span>Brian<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Matt<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Chris<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Alex<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Steve<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Paul<span class="pl-pds">"</span></span>];
+<span class="pl-c1">NSDictionary</span> *productManagers = @{<span class="pl-s"><span class="pl-pds">@"</span>iPhone<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">@"</span>Kate<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>iPad<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">@"</span>Kamal<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Mobile Web<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">@"</span>Bill<span class="pl-pds">"</span></span>};
+<span class="pl-c1">NSNumber</span> *shouldUseLiterals = @<span class="pl-c1">YES</span>;
+<span class="pl-c1">NSNumber</span> *buildingStreetNumber = @<span class="pl-c1">10018</span>;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSArray</span> *names = [<span class="pl-c1">NSArray</span> <span class="pl-c1">arrayWithObjects:</span><span class="pl-s"><span class="pl-pds">@"</span>Brian<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Matt<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Chris<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Alex<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Steve<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Paul<span class="pl-pds">"</span></span>, <span class="pl-c1">nil</span>];
+<span class="pl-c1">NSDictionary</span> *productManagers = [<span class="pl-c1">NSDictionary</span> <span class="pl-c1">dictionaryWithObjectsAndKeys:</span> <span class="pl-s"><span class="pl-pds">@"</span>Kate<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>iPhone<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Kamal<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>iPad<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Bill<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Mobile Web<span class="pl-pds">"</span></span>, <span class="pl-c1">nil</span>];
+<span class="pl-c1">NSNumber</span> *shouldUseLiterals = [<span class="pl-c1">NSNumber</span> <span class="pl-c1">numberWithBool:</span><span class="pl-c1">YES</span>];
+<span class="pl-c1">NSNumber</span> *buildingStreetNumber = [<span class="pl-c1">NSNumber</span> <span class="pl-c1">numberWithInteger:</span><span class="pl-c1">10018</span>];</pre></div>
+<h2><a id="user-content-constants" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#constants"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constants</h2>
+<p>Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as <code>static</code> constants and not <code>#define</code>s unless explicitly being used as a macro.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">static</span> <span class="pl-c1">NSString</span> * <span class="pl-k">const</span> RWTAboutViewControllerCompanyName = <span class="pl-s"><span class="pl-pds">@"</span>RayWenderlich.com<span class="pl-pds">"</span></span>;
+
+<span class="pl-k">static</span> <span class="pl-c1">CGFloat</span> <span class="pl-k">const</span> RWTImageThumbnailHeight = <span class="pl-c1">50.0</span>;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">define</span> <span class="pl-en">CompanyName</span> <span class="pl-s"><span class="pl-pds">@"</span>RayWenderlich.com<span class="pl-pds">"</span></span>
+
+#<span class="pl-k">define</span> <span class="pl-en">thumbnailHeight</span> <span class="pl-c1">2</span></pre></div>
+<h2><a id="user-content-enumerated-types" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#enumerated-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enumerated Types</h2>
+<p>When using <code>enum</code>s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types: <code>NS_ENUM()</code></p>
+<p><strong>For Example:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">typedef</span> <span class="pl-en">NS_ENUM</span>(<span class="pl-c1">NSInteger</span>, RWTLeftMenuTopItemType) {
+  RWTLeftMenuTopItemMain,
+  RWTLeftMenuTopItemShows,
+  RWTLeftMenuTopItemSchedule
+};</pre></div>
+<p>You can also make explicit value assignments (showing older k-style constant definition):</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">typedef</span> <span class="pl-en">NS_ENUM</span>(<span class="pl-c1">NSInteger</span>, RWTGlobalConstants) {
+  RWTPinSizeMin = <span class="pl-c1">1</span>,
+  RWTPinSizeMax = <span class="pl-c1">5</span>,
+  RWTPinCountMin = <span class="pl-c1">100</span>,
+  RWTPinCountMax = <span class="pl-c1">500</span>,
+};</pre></div>
+<p>Older k-style constant definitions should be <strong>avoided</strong> unless writing CoreFoundation C code (unlikely).</p>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">enum</span> GlobalConstants {
+  <span class="pl-c1">kMaxPinSize</span> = <span class="pl-c1">5</span>,
+  <span class="pl-c1">kMaxPinCount</span> = <span class="pl-c1">500</span>,
+};</pre></div>
+<h2><a id="user-content-case-statements" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#case-statements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Case Statements</h2>
+<p>Braces are not required for case statements, unless enforced by the complier.<br>
+When a case contains more than one line, braces should be added.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">switch</span> (condition) {
+  <span class="pl-k">case</span> <span class="pl-c1">1</span>:
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+  <span class="pl-k">case</span> <span class="pl-c1">2</span>: {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-c"><span class="pl-c">//</span> Multi-line example using braces</span>
+    <span class="pl-k">break</span>;
+  }
+  <span class="pl-k">case</span> <span class="pl-c1">3</span>:
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+  <span class="pl-k">default</span>: 
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+}
+</pre></div>
+<p>There are times when the same code can be used for multiple cases, and a fall-through should be used.  A fall-through is the removal of the 'break' statement for a case thus allowing the flow of execution to pass to the next case value.  A fall-through should be commented for coding clarity.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">switch</span> (condition) {
+  <span class="pl-k">case</span> <span class="pl-c1">1</span>:
+    <span class="pl-c"><span class="pl-c">//</span> ** fall-through! **</span>
+  <span class="pl-k">case</span> <span class="pl-c1">2</span>:
+    <span class="pl-c"><span class="pl-c">//</span> code executed for values 1 and 2</span>
+    <span class="pl-k">break</span>;
+  <span class="pl-k">default</span>: 
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+}
+</pre></div>
+<p>When using an enumerated type for a switch, 'default' is not needed.   For example:</p>
+<div class="highlight highlight-source-objc"><pre>RWTLeftMenuTopItemType menuType = RWTLeftMenuTopItemMain;
+
+<span class="pl-k">switch</span> (menuType) {
+  <span class="pl-k">case</span> RWTLeftMenuTopItemMain:
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+  <span class="pl-k">case</span> RWTLeftMenuTopItemShows:
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+  <span class="pl-k">case</span> RWTLeftMenuTopItemSchedule:
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+    <span class="pl-k">break</span>;
+}</pre></div>
+<h2><a id="user-content-private-properties" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#private-properties"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Private Properties</h2>
+<p>Private properties should be declared in class extensions (anonymous categories) in the implementation file of a class. Named categories (such as <code>RWTPrivate</code> or <code>private</code>) should never be used unless extending another class.   The Anonymous category can be shared/exposed for testing using the +Private.h file naming convention.</p>
+<p><strong>For Example:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">RWTDetailViewController</span> ()
+
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>) GADBannerView *googleAdView;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>) ADBannerView *iAdView;
+<span class="pl-k">@property</span> (<span class="pl-k">strong</span>, <span class="pl-k">nonatomic</span>) UIWebView *adXWebView;
+
+<span class="pl-k">@end</span></pre></div>
+<h2><a id="user-content-booleans" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#booleans"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Booleans</h2>
+<p>Objective-C uses <code>YES</code> and <code>NO</code>.  Therefore <code>true</code> and <code>false</code> should only be used for CoreFoundation, C or C++ code.  Since <code>nil</code> resolves to <code>NO</code> it is unnecessary to compare it in conditions. Never compare something directly to <code>YES</code>, because <code>YES</code> is defined to 1 and a <code>BOOL</code> can be up to 8 bits.</p>
+<p>This allows for more consistency across files and greater visual clarity.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (someObject) {}
+<span class="pl-k">if</span> (![anotherObject <span class="pl-c1">boolValue</span>]) {}</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (someObject == <span class="pl-c1">nil</span>) {}
+<span class="pl-k">if</span> ([anotherObject <span class="pl-c1">boolValue</span>] == <span class="pl-c1">NO</span>) {}
+<span class="pl-k">if</span> (isAwesome == <span class="pl-c1">YES</span>) {} <span class="pl-c"><span class="pl-c">//</span> Never do this.</span>
+<span class="pl-k">if</span> (isAwesome == <span class="pl-c1">true</span>) {} <span class="pl-c"><span class="pl-c">//</span> Never do this.</span></pre></div>
+<p>If the name of a <code>BOOL</code> property is expressed as an adjective, the property can omit the “is” prefix but specifies the conventional name for the get accessor, for example:</p>
+<div class="highlight highlight-source-objc"><pre>@property (assign, getter=isEditable) <span class="pl-c1">BOOL</span> editable;</pre></div>
+<p>Text and example taken from the <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE" rel="nofollow">Cocoa Naming Guidelines</a>.</p>
+<h2><a id="user-content-conditionals" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#conditionals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conditionals</h2>
+<p>Conditional bodies should always use braces even when a conditional body could be written without braces (e.g., it is one line only) to prevent errors. These errors include adding a second line and expecting it to be part of the if-statement. Another, <a href="http://programmers.stackexchange.com/a/16530" rel="nofollow">even more dangerous defect</a> may happen where the line "inside" the if-statement is commented out, and the next line unwittingly becomes part of the if-statement. In addition, this style is more consistent with all other conditionals, and therefore more easily scannable.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (!error) {
+  <span class="pl-k">return</span> success;
+}</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (!error)
+  <span class="pl-k">return</span> success;</pre></div>
+<p>or</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (!error) <span class="pl-k">return</span> success;</pre></div>
+<h3><a id="user-content-ternary-operator" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#ternary-operator"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ternary Operator</h3>
+<p>The Ternary operator, <code>?:</code> , should only be used when it increases clarity or code neatness. A single condition is usually all that should be evaluated. Evaluating multiple conditions is usually more understandable as an <code>if</code> statement, or refactored into instance variables. In general, the best use of the ternary operator is during assignment of a variable and deciding which value to use.</p>
+<p>Non-boolean variables should be compared against something, and parentheses are added for improved readability.  If the variable being compared is a boolean type, then no parentheses are needed.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSInteger</span> value = <span class="pl-c1">5</span>;
+result = (value != <span class="pl-c1">0</span>) ? x : y;
+
+<span class="pl-c1">BOOL</span> isHorizontal = <span class="pl-c1">YES</span>;
+result = isHorizontal ? x : y;</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>result = a &gt; b ? x = c &gt; d ? c : d : y;</pre></div>
+<h2><a id="user-content-init-methods" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#init-methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Init Methods</h2>
+<p>Init methods should follow the convention provided by Apple's generated code template.  A return type of 'instancetype' should also be used instead of 'id'.</p>
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">instancetype</span>)init {
+  self = [<span class="pl-c1">super</span> <span class="pl-c1">init</span>];
+  <span class="pl-k">if</span> (self) {
+    <span class="pl-c"><span class="pl-c">//</span> ...</span>
+  }
+  <span class="pl-k">return</span> self;
+}</pre></div>
+<p>See <a href="/coding-style-guide/objective-c-1.htm#class-constructor-methods">Class Constructor Methods</a> for link to article on instancetype.</p>
+<h2><a id="user-content-class-constructor-methods" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#class-constructor-methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Constructor Methods</h2>
+<p>Where class constructor methods are used, these should always return type of 'instancetype' and never 'id'. This ensures the compiler correctly infers the result type.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">Airplane</span>
++ (<span class="pl-k">instancetype</span>)<span class="pl-en">airplaneWithType</span><span class="pl-en">:</span>(RWTAirplaneType)<span class="pl-smi">type</span>;
+<span class="pl-k">@end</span></pre></div>
+<p>More information on instancetype can be found on <a href="http://nshipster.com/instancetype/" rel="nofollow">NSHipster.com</a>.</p>
+<h2><a id="user-content-cgrect-functions" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#cgrect-functions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CGRect Functions</h2>
+<p>When accessing the <code>x</code>, <code>y</code>, <code>width</code>, or <code>height</code> of a <code>CGRect</code>, always use the <a href="http://developer.apple.com/library/ios/#documentation/graphicsimaging/reference/CGGeometry/Reference/reference.html" rel="nofollow"><code>CGGeometry</code> functions</a> instead of direct struct member access. From Apple's <code>CGGeometry</code> reference:</p>
+<blockquote>
+<p>All functions described in this reference that take CGRect data structures as inputs implicitly standardize those rectangles before calculating their results. For this reason, your applications should avoid directly reading and writing the data stored in the CGRect data structure. Instead, use the functions described here to manipulate rectangles and to retrieve their characteristics.</p>
+</blockquote>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">CGRect</span> frame = self.view.frame;
+
+<span class="pl-c1">CGFloat</span> x = CGRectGetMinX(frame);
+<span class="pl-c1">CGFloat</span> y = CGRectGetMinY(frame);
+<span class="pl-c1">CGFloat</span> width = CGRectGetWidth(frame);
+<span class="pl-c1">CGFloat</span> height = CGRectGetHeight(frame);
+<span class="pl-c1">CGRect</span> frame = CGRectMake(<span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>, width, height);</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">CGRect</span> frame = self.view.frame;
+
+<span class="pl-c1">CGFloat</span> x = frame.origin.x;
+<span class="pl-c1">CGFloat</span> y = frame.origin.y;
+<span class="pl-c1">CGFloat</span> width = frame.size.width;
+<span class="pl-c1">CGFloat</span> height = frame.size.height;
+<span class="pl-c1">CGRect</span> frame = (<span class="pl-c1">CGRect</span>){ .<span class="pl-smi">origin</span> = <span class="pl-c1">CGPointZero</span>, .<span class="pl-smi">size</span> = frame.<span class="pl-smi">size</span> };</pre></div>
+<h2><a id="user-content-golden-path" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#golden-path"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Golden Path</h2>
+<p>When coding with conditionals, the left hand margin of the code should be the "golden" or "happy" path.  That is, don't nest <code>if</code> statements.  Multiple return statements are OK.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)someMethod {
+  <span class="pl-k">if</span> (![someOther <span class="pl-c1">boolValue</span>]) {
+  <span class="pl-k">return</span>;
+  }
+
+  <span class="pl-c"><span class="pl-c">//</span>Do something important</span>
+}</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)someMethod {
+  <span class="pl-k">if</span> ([someOther <span class="pl-c1">boolValue</span>]) {
+    <span class="pl-c"><span class="pl-c">//</span>Do something important</span>
+  }
+}</pre></div>
+<h2><a id="user-content-error-handling" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#error-handling"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error handling</h2>
+<p>When methods return an error parameter by reference, switch on the returned value, not the error variable.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSError</span> *error;
+<span class="pl-k">if</span> (![<span class="pl-c1">self</span> <span class="pl-c1">trySomethingWithError:</span>&amp;error]) {
+  <span class="pl-c"><span class="pl-c">//</span> Handle Error</span>
+}</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSError</span> *error;
+[<span class="pl-c1">self</span> <span class="pl-c1">trySomethingWithError:</span>&amp;error];
+<span class="pl-k">if</span> (error) {
+  <span class="pl-c"><span class="pl-c">//</span> Handle Error</span>
+}</pre></div>
+<p>Some of Apple’s APIs write garbage values to the error parameter (if non-NULL) in successful cases, so switching on the error can cause false negatives (and subsequently crash).</p>
+<h2><a id="user-content-singletons" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#singletons"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Singletons</h2>
+<p>Singleton objects should use a thread-safe pattern for creating their shared instance.</p>
+<div class="highlight highlight-source-objc"><pre>+ (<span class="pl-k">instancetype</span>)sharedInstance {
+  <span class="pl-k">static</span> <span class="pl-c1">id</span> sharedInstance = <span class="pl-c1">nil</span>;
+
+  <span class="pl-k">static</span> <span class="pl-c1">dispatch_once_t</span> onceToken;
+  <span class="pl-c1">dispatch_once</span>(&amp;onceToken, ^{
+    sharedInstance = [[<span class="pl-c1">self</span> <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+  });
+
+  <span class="pl-k">return</span> sharedInstance;
+}</pre></div>
+<p>This will prevent <a href="http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html" rel="nofollow">possible and sometimes prolific crashes</a>.</p>
+<h2><a id="user-content-line-breaks" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#line-breaks"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Line Breaks</h2>
+<p>Line breaks are an important topic since this style guide is focused for print and online readability.</p>
+<p>For example:</p>
+<div class="highlight highlight-source-objc"><pre>self.productsRequest = [[SKProductsRequest <span class="pl-c1">alloc</span>] <span class="pl-c1">initWithProductIdentifiers:</span>productIdentifiers];</pre></div>
+<p>A long line of code like this should be carried on to the second line adhering to this style guide's Spacing section (two spaces).</p>
+<div class="highlight highlight-source-objc"><pre>self.productsRequest = [[SKProductsRequest <span class="pl-c1">alloc</span>] 
+  <span class="pl-c1">initWithProductIdentifiers:</span>productIdentifiers];</pre></div>
+<h2><a id="user-content-smiley-face" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#smiley-face"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Smiley Face</h2>
+<p>Smiley faces are a very prominent style feature of the raywenderlich.com site!  It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic.  The end square bracket is used because it represents the largest smile able to be captured using ascii art.  A half-hearted smile is represented if an end parenthesis is used, and thus not preferred.</p>
+<p><strong>Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>:]</pre></div>
+<p><strong>Not Preferred:</strong></p>
+<div class="highlight highlight-source-objc"><pre>:)</pre></div>
+<h2><a id="user-content-xcode-project" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#xcode-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Xcode project</h2>
+<p>The physical files should be kept in sync with the Xcode project files in order to avoid file sprawl. Any Xcode groups created should be reflected by folders in the filesystem. Code should be grouped not only by type, but also by feature for greater clarity.</p>
+<p>When possible, always turn on "Treat Warnings as Errors" in the target's Build Settings and enable as many <a href="http://boredzo.org/blog/archives/2009-11-07/warnings" rel="nofollow">additional warnings</a> as possible. If you need to ignore a specific warning, use <a href="http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas" rel="nofollow">Clang's pragma feature</a>.</p>
+<h1><a id="user-content-other-objective-c-style-guides" class="anchor" aria-hidden="true" href="/coding-style-guide/objective-c-1.htm#other-objective-c-style-guides"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Objective-C Style Guides</h1>
+<p>If ours doesn't fit your tastes, have a look at some other style guides:</p>
+<ul>
+<li><a href="https://github.com/RobotsAndPencils/objective-c-style-guide">Robots &amp; Pencils</a></li>
+<li><a href="https://github.com/NYTimes/objective-c-style-guide">New York Times</a></li>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml" rel="nofollow">Google</a></li>
+<li><a href="https://github.com/github/objective-c-conventions">GitHub</a></li>
+<li><a href="https://trac.adium.im/wiki/CodingStyle" rel="nofollow">Adium</a></li>
+<li><a href="https://gist.github.com/soffes/812796">Sam Soffes</a></li>
+<li><a href="http://cocoadevcentral.com/articles/000082.php" rel="nofollow">CocoaDevCentral</a></li>
+<li><a href="http://lukeredpath.co.uk/blog/my-objective-c-style-guide.html" rel="nofollow">Luke Redpath</a></li>
+<li><a href="http://www.cimgf.com/zds-code-style-guide/" rel="nofollow">Marcus Zarra</a></li>
+</ul>
+</article>
+  </div>
+
+    </div>
+
+  
+
+  <details class="details-reset details-overlay details-overlay-dark">
+    <summary data-hotkey="l" aria-label="Jump to line" role="button"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast linejump" aria-label="Jump to line" role="dialog" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="js-jump-to-line-form Box-body d-flex" action="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md" accept-charset="UTF-8" method="get">
+        <input class="form-control flex-auto mr-3 linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line…" aria-label="Jump to line" autofocus="">
+        <button type="submit" class="btn" data-close-dialog="">Go</button>
+</form>    </details-dialog>
+  </details>
+
+    <div class="Popover anim-scale-in js-tagsearch-popover" hidden="" data-tagsearch-url="/ApvDatNM/coding-style-guide/find-symbols" data-tagsearch-ref="master" data-tagsearch-path="objective-c-1.md" data-tagsearch-lang="Markdown" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:267247614,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Markdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md?_pjax=%23js-repo-pjax-container&quot;,&quot;user_id&quot;:56908901}}" data-hydro-click-hmac="563705c8b2dedb464307cccdc293adbc4b32f42c1aa54c4e1234cb46fba72ff7">
+  <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
+    <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+  </div>
+  
+
+  </div>
+
+        
+
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" async="async" integrity="sha512-WcQmT2vhcClFVOaaAJV/M+HqsJ2Gq/myvl6F3gCVBxykazXTs+i5fvxncSXwyG1CSfcrqmLFw/R/bmFYzprX2A==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-59c4264f.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-Y86V8OBlvF6I/7e56GKOOt80Yg1RTGA09uqFFX18aiBtevLbKGxB7sVpCn79fukppFIBqyBTB/s6l0Bhn0kidQ==" type="application/javascript" src="./objective-c-1_files/environment-bootstrap-63ce95f0.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-ASMgX6+DJ9LVZX/3Fj0RzibSpfigU83ubvsxxwriojWmuBM3faUp1108gypkhXpqLHEBQhIhjlzDOejzOFd0gA==" type="application/javascript" src="./objective-c-1_files/vendor-0123205f.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-+6Nd4aRFaWfNCioCSh16u4syBFdf0v/NceXHXkq09bWpEe5bbFHuNcTynuDOFo1rxyzp/d++LXUHy71vQuvVug==" type="application/javascript" src="./objective-c-1_files/frameworks-fba35de1.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-itwYIoc2+ZxRc9Us7Efw4Z6vlNNYS59N2hYQk7plNwD2rjvLq04WT64SOo9HPWe1pas8G8LCEGLT4+rApPrYgg==" type="application/javascript" src="./objective-c-1_files/github-bootstrap-8adc1822.js"></script>
+    
+        <script crossorigin="anonymous" async="async" integrity="sha512-urN6bhHnHu4C12A+cTH3dOp+CwLaycy2HUXr95hvu5pbYRdF8z6iR+UQcTZutQ6mZG3Njluw2MTZVCNmwcqh8g==" type="application/javascript" data-module-id="./randomColor.js" data-src="https://github.githubassets.com/assets/randomColor-bab37a6e.js"></script>
+        <script crossorigin="anonymous" async="async" integrity="sha512-3Vk1NFIOm+TBUMM6pTA6DCUwwLLnc/QIT8jpENm71InvSU8O4p2plDagpst1tH1l+9jOBnneaXZnAskA9a2b3w==" type="application/javascript" data-module-id="./gist-vendor.js" data-src="https://github.githubassets.com/assets/gist-vendor-dd593534.js"></script>
+        <script crossorigin="anonymous" async="async" integrity="sha512-4GcSWGoe36+BoWho4gtJcByZe8j43w+lt2/PDe3rmBxRVSgD29YipDwuIywe8fvOd2b2CszBqaPGxSznUtE3Xg==" type="application/javascript" data-module-id="./drag-drop.js" data-src="https://github.githubassets.com/assets/drag-drop-e0671258.js"></script>
+    
+    
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="js-stale-session-flash-signed-in" hidden="">You signed in with another tab or window. <a href="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden="">You signed out in another tab or window. <a href="https://github.com/ApvDatNM/coding-style-guide/blob/master/objective-c-1.md">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog"></template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;"></div>
+</div>
+
+
+  
+
+
+<div aria-live="polite" class="sr-only"></div><div aria-live="polite" class="sr-only"></div><div aria-live="polite" class="sr-only"></div><span id="und-addon-container" data-w="36px" data-h="73px" style="height: 73px; width: 36px; right: 0px; left: auto; top: 40%; bottom: auto; margin-left: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; display: block;"><span id="und-addon-play-btn-up" class="und-addon-play-btn und-addon-play-side-right und-addon-btn-hoverable" style="background-image: url(&quot;chrome-extension://dbofniohnfjigodceiebfkcfdhncnici/img/arrow-up.svg&quot;); opacity: 0.4; width: 36px; height: 36px; display: block;"></span><span id="und-addon-play-btn-dn" class="und-addon-play-btn und-addon-play-side-right und-addon-btn-hoverable" style="background-image: url(&quot;chrome-extension://dbofniohnfjigodceiebfkcfdhncnici/img/arrow-dn.svg&quot;); opacity: 0.4; width: 36px; height: 36px; display: none; margin: 1px 0px 0px;"></span></span></body></html>
